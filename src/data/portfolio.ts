@@ -233,14 +233,14 @@ export const PROJECTS = [
 ];
 
 export const CONTACT = {
-  address: 'Hyderabad, Telangana, India',
-  phoneNo: '+91 **********',
-  email: 'neerajnakka.n@gmail.com',
+  address: 'Germany',
+  phoneNo: '',
+  email: 'finknadi@gmail.com',
   social: {
-    github: 'https://github.com/neerajnakka',
-    linkedin: 'https://linkedin.com/in/neerajchandran',
-    twitter: 'https://twitter.com/neerajnakka',
-  }
+    github: 'https://github.com/nadinlab',
+    linkedin: 'https://www.linkedin.com/in/nadinfink/',
+    twitter: '',
+  },
 };
 
 export const SKILLS_BY_CATEGORY = {

@@ -37,7 +37,7 @@ export const Skills = () => {
       title: 'DevOps & Automation',
       icon: Code,
       skills: SKILLS_BY_CATEGORY.devops,
-      color: 'text-green-500',
+      color: 'text-primary-500',
     },
     {
       id: 'development',

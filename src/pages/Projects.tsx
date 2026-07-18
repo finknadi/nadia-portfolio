@@ -86,7 +86,7 @@ export const Projects = () => {
                   <div className="absolute top-4 right-4">
                     <span className={`px-3 py-1 rounded-full text-xs font-mono font-medium ${
                       project.category === 'devops' 
-                        ? 'bg-green-500/20 text-green-500 border border-green-500/30'
+                        ? 'bg-primary-500/20 text-primary-500 border border-primary-500/30'
                         : 'bg-blue-500/20 text-blue-500 border border-blue-500/30'
                     }`}>
                       {project.category === 'devops' ? 'DevOps' : 'Full-Stack'}

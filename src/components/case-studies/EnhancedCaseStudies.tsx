@@ -214,10 +214,10 @@ const EnhancedCaseStudies: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-12"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-green-400 to-green-300 bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-primary-400 to-primary-300 bg-clip-text text-transparent">
             CASE_STUDIES.EXE
           </h1>
-          <p className="text-green-200 text-lg max-w-3xl mx-auto">
+          <p className="text-primary-200 text-lg max-w-3xl mx-auto">
             Real-world projects showcasing innovative solutions, measurable impact, and technical excellence across DevOps, Cloud Infrastructure, and Full-Stack Development
           </p>
         </motion.div>
@@ -269,8 +269,8 @@ const EnhancedCaseStudies: React.FC = () => {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                   selectedCategory === category
-                    ? 'bg-green-400 text-black'
-                    : 'bg-gray-800 text-green-400 border border-gray-600 hover:border-green-400'
+                    ? 'bg-primary-400 text-black'
+                    : 'bg-gray-800 text-primary-400 border border-gray-600 hover:border-primary-400'
                 }`}
               >
                 {category}
@@ -287,8 +287,8 @@ const EnhancedCaseStudies: React.FC = () => {
                 onClick={() => setSelectedStudy(study.id)}
                 className={`cursor-pointer p-4 rounded-lg border transition-all duration-300 ${
                   selectedStudy === study.id
-                    ? 'bg-green-400/10 border-green-400'
-                    : 'bg-gray-900/50 border-gray-700 hover:border-green-400/50'
+                    ? 'bg-primary-400/10 border-primary-400'
+                    : 'bg-gray-900/50 border-gray-700 hover:border-primary-400/50'
                 } ${study.featured ? 'ring-2 ring-yellow-400/50' : ''}`}
               >
                 <div className="flex items-center justify-between mb-2">
@@ -340,24 +340,24 @@ const EnhancedCaseStudies: React.FC = () => {
                     <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
                       {selectedStudyData.title}
                     </h2>
-                    <p className="text-green-400 text-lg">
+                    <p className="text-primary-400 text-lg">
                       {selectedStudyData.subtitle}
                     </p>
                   </div>
                   
                   <div className="flex items-center gap-4 text-sm text-gray-400">
                     <div className="text-center">
-                      <Calendar className="w-5 h-5 mx-auto mb-1 text-green-400" />
+                      <Calendar className="w-5 h-5 mx-auto mb-1 text-primary-400" />
                       <p className="font-medium">{selectedStudyData.timeline.start}</p>
                       <p className="text-xs">Start Date</p>
                     </div>
                     <div className="text-center">
-                      <Clock className="w-5 h-5 mx-auto mb-1 text-green-400" />
+                      <Clock className="w-5 h-5 mx-auto mb-1 text-primary-400" />
                       <p className="font-medium">{selectedStudyData.timeline.duration}</p>
                       <p className="text-xs">Duration</p>
                     </div>
                     <div className="text-center">
-                      <CheckCircle className="w-5 h-5 mx-auto mb-1 text-green-400" />
+                      <CheckCircle className="w-5 h-5 mx-auto mb-1 text-primary-400" />
                       <p className="font-medium">{selectedStudyData.timeline.end}</p>
                       <p className="text-xs">Completion</p>
                     </div>
@@ -378,8 +378,8 @@ const EnhancedCaseStudies: React.FC = () => {
                     onClick={() => setActiveTab(tab.id as any)}
                     className={`flex items-center gap-2 px-6 py-4 text-sm font-medium transition-all duration-300 ${
                       activeTab === tab.id
-                        ? 'text-green-400 border-b-2 border-green-400'
-                        : 'text-gray-400 hover:text-green-400'
+                        ? 'text-primary-400 border-b-2 border-primary-400'
+                        : 'text-gray-400 hover:text-primary-400'
                     }`}
                   >
                     {tab.icon}
@@ -401,7 +401,7 @@ const EnhancedCaseStudies: React.FC = () => {
                     {activeTab === 'overview' && (
                       <div className="space-y-6">
                         <div>
-                          <h3 className="text-xl font-bold text-green-400 mb-4 flex items-center gap-2">
+                          <h3 className="text-xl font-bold text-primary-400 mb-4 flex items-center gap-2">
                             <AlertCircle className="w-5 h-5" />
                             Challenge
                           </h3>
@@ -412,7 +412,7 @@ const EnhancedCaseStudies: React.FC = () => {
 
                         <div className="grid md:grid-cols-2 gap-6">
                           <div>
-                            <h3 className="text-xl font-bold text-green-400 mb-4 flex items-center gap-2">
+                            <h3 className="text-xl font-bold text-primary-400 mb-4 flex items-center gap-2">
                               <Settings className="w-5 h-5" />
                               Technologies Used
                             </h3>
@@ -424,7 +424,7 @@ const EnhancedCaseStudies: React.FC = () => {
                           </div>
 
                           <div>
-                            <h3 className="text-xl font-bold text-green-400 mb-4 flex items-center gap-2">
+                            <h3 className="text-xl font-bold text-primary-400 mb-4 flex items-center gap-2">
                               <GitBranch className="w-5 h-5" />
                               Architecture Pattern
                             </h3>
@@ -433,7 +433,7 @@ const EnhancedCaseStudies: React.FC = () => {
                             </p>
                             <div className="flex flex-wrap gap-2">
                               {selectedStudyData.architecture?.components.map((component) => (
-                                <span key={component} className="px-2 py-1 bg-gray-800 text-green-400 text-xs rounded">
+                                <span key={component} className="px-2 py-1 bg-gray-800 text-primary-400 text-xs rounded">
                                   {component}
                                 </span>
                               ))}
@@ -445,7 +445,7 @@ const EnhancedCaseStudies: React.FC = () => {
 
                     {activeTab === 'solution' && (
                       <div className="space-y-6">
-                        <h3 className="text-xl font-bold text-green-400 mb-4 flex items-center gap-2">
+                        <h3 className="text-xl font-bold text-primary-400 mb-4 flex items-center gap-2">
                           <Code className="w-5 h-5" />
                           Solution Approach
                         </h3>
@@ -458,7 +458,7 @@ const EnhancedCaseStudies: React.FC = () => {
                               transition={{ delay: index * 0.1 }}
                               className="flex gap-4 p-4 bg-gray-800/50 rounded-lg"
                             >
-                              <div className="flex-shrink-0 w-8 h-8 bg-green-400 text-black rounded-full flex items-center justify-center font-bold text-sm">
+                              <div className="flex-shrink-0 w-8 h-8 bg-primary-400 text-black rounded-full flex items-center justify-center font-bold text-sm">
                                 {index + 1}
                               </div>
                               <p className="text-gray-300 leading-relaxed flex-1">
@@ -472,7 +472,7 @@ const EnhancedCaseStudies: React.FC = () => {
 
                     {activeTab === 'results' && (
                       <div className="space-y-6">
-                        <h3 className="text-xl font-bold text-green-400 mb-4 flex items-center gap-2">
+                        <h3 className="text-xl font-bold text-primary-400 mb-4 flex items-center gap-2">
                           <BarChart3 className="w-5 h-5" />
                           Impact & Results
                         </h3>
@@ -496,11 +496,11 @@ const EnhancedCaseStudies: React.FC = () => {
                                   </div>
                                   <div className="flex justify-between text-sm">
                                     <span className="text-gray-400">After</span>
-                                    <span className="text-green-400">{(metrics as any).after}</span>
+                                    <span className="text-primary-400">{(metrics as any).after}</span>
                                   </div>
                                   <div className="flex justify-between text-sm font-bold">
                                     <span className="text-gray-400">Improvement</span>
-                                    <span className="text-green-400">-{(metrics as any).improvement}</span>
+                                    <span className="text-primary-400">-{(metrics as any).improvement}</span>
                                   </div>
                                 </div>
                               )}
@@ -513,11 +513,11 @@ const EnhancedCaseStudies: React.FC = () => {
                                   </div>
                                   <div className="flex justify-between text-sm">
                                     <span className="text-gray-400">After</span>
-                                    <span className="text-green-400">{(metrics as any).after}</span>
+                                    <span className="text-primary-400">{(metrics as any).after}</span>
                                   </div>
                                   <div className="flex justify-between text-sm font-bold">
                                     <span className="text-gray-400">Reduction</span>
-                                    <span className="text-green-400">-{(metrics as any).reduction}</span>
+                                    <span className="text-primary-400">-{(metrics as any).reduction}</span>
                                   </div>
                                 </div>
                               )}
@@ -526,11 +526,11 @@ const EnhancedCaseStudies: React.FC = () => {
                                 <div className="space-y-2">
                                   <div className="flex justify-between text-sm">
                                     <span className="text-gray-400">Uptime</span>
-                                    <span className="text-green-400">{(metrics as any).uptime}</span>
+                                    <span className="text-primary-400">{(metrics as any).uptime}</span>
                                   </div>
                                   <div className="flex justify-between text-sm font-bold">
                                     <span className="text-gray-400">Improvement</span>
-                                    <span className="text-green-400">+{(metrics as any).improvement}</span>
+                                    <span className="text-primary-400">+{(metrics as any).improvement}</span>
                                   </div>
                                 </div>
                               )}
@@ -539,11 +539,11 @@ const EnhancedCaseStudies: React.FC = () => {
                                 <div className="space-y-2">
                                   <div className="flex justify-between text-sm">
                                     <span className="text-gray-400">Capacity</span>
-                                    <span className="text-green-400">{(metrics as any).capacity}</span>
+                                    <span className="text-primary-400">{(metrics as any).capacity}</span>
                                   </div>
                                   <div className="flex justify-between text-sm font-bold">
                                     <span className="text-gray-400">Improvement</span>
-                                    <span className="text-green-400">+{(metrics as any).improvement}</span>
+                                    <span className="text-primary-400">+{(metrics as any).improvement}</span>
                                   </div>
                                 </div>
                               )}
@@ -552,7 +552,7 @@ const EnhancedCaseStudies: React.FC = () => {
                                 <div className="space-y-2">
                                   <div className="flex justify-between text-sm font-bold">
                                     <span className="text-gray-400">Performance Gain</span>
-                                    <span className="text-green-400">+{(metrics as any).improvement}</span>
+                                    <span className="text-primary-400">+{(metrics as any).improvement}</span>
                                   </div>
                                 </div>
                               )}
@@ -568,9 +568,9 @@ const EnhancedCaseStudies: React.FC = () => {
                               initial={{ opacity: 0, x: -20 }}
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ delay: index * 0.1 }}
-                              className="flex items-start gap-3 p-3 bg-green-500/10 border border-green-500/30 rounded-lg"
+                              className="flex items-start gap-3 p-3 bg-primary-500/10 border border-primary-500/30 rounded-lg"
                             >
-                              <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
+                              <CheckCircle className="w-5 h-5 text-primary-400 flex-shrink-0 mt-0.5" />
                               <p className="text-gray-300 leading-relaxed">{item}</p>
                             </motion.div>
                           ))}
@@ -589,12 +589,12 @@ const EnhancedCaseStudies: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
-          className="mt-16 bg-gradient-to-r from-green-500/10 to-green-600/10 border border-green-400/30 rounded-lg p-8 text-center"
+          className="mt-16 bg-gradient-to-r from-primary-500/10 to-primary-600/10 border border-primary-400/30 rounded-lg p-8 text-center"
         >
-          <h2 className="text-2xl font-bold text-green-400 mb-4">
+          <h2 className="text-2xl font-bold text-primary-400 mb-4">
             INTERESTED_IN_A_SIMILAR_PROJECT?
           </h2>
-          <p className="text-green-200 mb-6 max-w-2xl mx-auto">
+          <p className="text-primary-200 mb-6 max-w-2xl mx-auto">
             Let's discuss how we can transform your infrastructure and achieve similar results for your organization.
           </p>
           

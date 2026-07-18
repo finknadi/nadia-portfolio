@@ -22,20 +22,20 @@ import {
 const categoryColors = {
   DevOps: 'bg-blue-500/20 text-blue-400 border-blue-500/30',
   'Cloud Infrastructure': 'bg-purple-500/20 text-purple-400 border-purple-500/30',
-  'Full-Stack': 'bg-green-500/20 text-green-400 border-green-500/30',
+  'Full-Stack': 'bg-primary-500/20 text-primary-400 border-primary-500/30',
   'DevOps Tools': 'bg-orange-500/20 text-orange-400 border-orange-500/30',
   Security: 'bg-red-500/20 text-red-400 border-red-500/30',
   Database: 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
 };
 
 const statusColors = {
-  completed: 'bg-green-500/20 text-green-400',
+  completed: 'bg-primary-500/20 text-primary-400',
   inProgress: 'bg-blue-500/20 text-blue-400',
   planning: 'bg-gray-500/20 text-gray-400',
 };
 
 const difficultyColors = {
-  Beginner: 'bg-green-500/20 text-green-400',
+  Beginner: 'bg-primary-500/20 text-primary-400',
   Intermediate: 'bg-yellow-500/20 text-yellow-400',
   Advanced: 'bg-red-500/20 text-red-400',
 };
@@ -43,7 +43,7 @@ const difficultyColors = {
 // Animated Background Component
 export const AnimatedBackground: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="relative min-h-screen bg-black text-green-400 overflow-hidden">
+    <div className="relative min-h-screen bg-black text-primary-400 overflow-hidden">
       {/* Animated Grid */}
       <div className="fixed inset-0 opacity-10">
         <div 
@@ -59,8 +59,8 @@ export const AnimatedBackground: React.FC<{ children: React.ReactNode }> = ({ ch
       </div>
       
       {/* Glowing orbs */}
-      <div className="fixed top-20 left-10 w-32 h-32 bg-green-400/10 rounded-full blur-xl animate-pulse" />
-      <div className="fixed bottom-20 right-10 w-40 h-40 bg-green-400/5 rounded-full blur-2xl animate-float" />
+      <div className="fixed top-20 left-10 w-32 h-32 bg-primary-400/10 rounded-full blur-xl animate-pulse" />
+      <div className="fixed bottom-20 right-10 w-40 h-40 bg-primary-400/5 rounded-full blur-2xl animate-float" />
       
       <div className="relative z-10">
         {children}
@@ -156,12 +156,12 @@ export const StatsCard: React.FC<StatsCardProps> = ({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      whileHover={{ scale: 1.02, borderColor: '#22c55e' }}
+      whileHover={{ scale: 1.02, borderColor: '#B455FF' }}
       className="bg-gray-900/50 border border-gray-700 rounded-lg p-6 transition-all duration-300"
     >
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-green-300 text-sm font-medium">{title}</h3>
-        {icon && <div className="text-green-400">{icon}</div>}
+        <h3 className="text-primary-300 text-sm font-medium">{title}</h3>
+        {icon && <div className="text-primary-400">{icon}</div>}
       </div>
       
       <div className="flex items-end justify-between">
@@ -169,7 +169,7 @@ export const StatsCard: React.FC<StatsCardProps> = ({
           <p className="text-2xl font-bold text-white">{value}</p>
           {change && (
             <p className={`text-sm flex items-center gap-1 mt-1 ${
-              trend === 'up' ? 'text-green-400' : 
+              trend === 'up' ? 'text-primary-400' : 
               trend === 'down' ? 'text-red-400' : 'text-gray-400'
             }`}>
               <TrendingUp className="w-3 h-3" />
@@ -195,7 +195,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
   value,
   max = 100,
   label,
-  color = 'bg-green-500',
+  color = 'bg-primary-500',
   animated = true
 }) => {
   const percentage = Math.min((value / max) * 100, 100);
@@ -205,7 +205,7 @@ export const ProgressBar: React.FC<ProgressBarProps> = ({
       {label && (
         <div className="flex justify-between text-sm">
           <span className="text-gray-300">{label}</span>
-          <span className="text-green-400 font-medium">{value}/{max}</span>
+          <span className="text-primary-400 font-medium">{value}/{max}</span>
         </div>
       )}
       
@@ -253,10 +253,10 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-2 mb-1">
           <h4 className="text-white font-medium">{title}</h4>
-          {icon && <div className="text-green-400">{icon}</div>}
+          {icon && <div className="text-primary-400">{icon}</div>}
         </div>
         <p className="text-gray-400 text-sm mb-1">{description}</p>
-        <p className="text-green-400 text-xs">{date}</p>
+        <p className="text-primary-400 text-xs">{date}</p>
       </div>
     </motion.div>
   );
@@ -284,12 +284,12 @@ export const InteractiveButton: React.FC<InteractiveButtonProps> = ({
   icon,
   iconPosition = 'left'
 }) => {
-  const baseClasses = 'inline-flex items-center gap-2 font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-50 disabled:cursor-not-allowed';
+  const baseClasses = 'inline-flex items-center gap-2 font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 focus:ring-offset-black disabled:opacity-50 disabled:cursor-not-allowed';
   
   const variants = {
-    primary: 'bg-green-400 text-black hover:bg-green-300 hover:scale-105',
-    secondary: 'bg-gray-800 text-green-400 border border-gray-600 hover:border-green-400 hover:bg-gray-700',
-    outline: 'border border-green-400 text-green-400 hover:bg-green-400 hover:text-black'
+    primary: 'bg-primary-400 text-black hover:bg-primary-300 hover:scale-105',
+    secondary: 'bg-gray-800 text-primary-400 border border-gray-600 hover:border-primary-400 hover:bg-gray-700',
+    outline: 'border border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-black'
   };
   
   const sizes = {
@@ -339,8 +339,8 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
         onClick={() => onCategoryChange('All')}
         className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
           selectedCategory === 'All'
-            ? 'bg-green-400 text-black'
-            : 'bg-gray-800 text-green-400 border border-gray-600 hover:border-green-400'
+            ? 'bg-primary-400 text-black'
+            : 'bg-gray-800 text-primary-400 border border-gray-600 hover:border-primary-400'
         }`}
       >
         All
@@ -354,8 +354,8 @@ export const CategoryFilter: React.FC<CategoryFilterProps> = ({
           onClick={() => onCategoryChange(category)}
           className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
             selectedCategory === category
-              ? 'bg-green-400 text-black'
-              : 'bg-gray-800 text-green-400 border border-gray-600 hover:border-green-400'
+              ? 'bg-primary-400 text-black'
+              : 'bg-gray-800 text-primary-400 border border-gray-600 hover:border-primary-400'
           }`}
         >
           {category}
@@ -380,8 +380,8 @@ export const ViewToggle: React.FC<ViewToggleProps> = ({ view, onViewChange }) =>
         onClick={() => onViewChange('grid')}
         className={`p-2 rounded-md transition-all duration-300 ${
           view === 'grid'
-            ? 'bg-green-400 text-black'
-            : 'text-gray-400 hover:text-green-400'
+            ? 'bg-primary-400 text-black'
+            : 'text-gray-400 hover:text-primary-400'
         }`}
       >
         <Grid3X3 className="w-4 h-4" />
@@ -392,8 +392,8 @@ export const ViewToggle: React.FC<ViewToggleProps> = ({ view, onViewChange }) =>
         onClick={() => onViewChange('list')}
         className={`p-2 rounded-md transition-all duration-300 ${
           view === 'list'
-            ? 'bg-green-400 text-black'
-            : 'text-gray-400 hover:text-green-400'
+            ? 'bg-primary-400 text-black'
+            : 'text-gray-400 hover:text-primary-400'
         }`}
       >
         <List className="w-4 h-4" />

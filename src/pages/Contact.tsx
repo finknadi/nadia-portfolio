@@ -115,7 +115,7 @@ export const Contact = () => {
       label: 'Phone',
       value: CONTACT.phoneNo,
       href: `tel:${CONTACT.phoneNo}`,
-      color: 'text-green-500',
+      color: 'text-primary-500',
     },
     {
       icon: MapPin,

@@ -34,6 +34,7 @@
 
 // export default App;
 
+import { DayBake } from './pages/DayBake';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
@@ -64,6 +65,7 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/projects/daybake" element={<DayBake />} />
           </Routes>
         </main>
 

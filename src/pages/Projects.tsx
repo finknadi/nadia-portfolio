@@ -292,7 +292,7 @@ const projects: Project[] = [
     categoryLabel: 'Web Design',
     description:
       'A warm editorial landing page for an artisan bakery with local delivery',
-    image: '/images/projects/daybake-cover.png',
+    image: '/images/projects/daybake/daybake-video-cover.png',
     tags: ['Web Design', 'UI Design', 'Figma'],
     path: '/projects/daybake',
   },
@@ -303,7 +303,7 @@ const projects: Project[] = [
     categoryLabel: 'Webflow',
     description:
       'A responsive product experience combining precise layout and interaction',
-    image: '/images/projects/daybake-cover.png',
+    image: '/images/projects/daybake/daybake-video-coverr.png',
     tags: ['Webflow', 'Responsive Design', 'Interaction'],
   },
   {
@@ -313,7 +313,7 @@ const projects: Project[] = [
     categoryLabel: 'UX/UI',
     description:
       'A digital product concept shaped around structure, clarity and visual atmosphere',
-    image: '/images/projects/daybake-cover.png',
+    image: '/images/projects/daybake/daybake-cover.png',
     tags: ['UX/UI', 'User Flow', 'Prototype'],
   },
   {
@@ -323,7 +323,7 @@ const projects: Project[] = [
     categoryLabel: 'Web Design',
     description:
       'A focused website concept exploring hierarchy, composition and visual storytelling',
-    image: '/images/projects/daybake-cover.png',
+    image: '/images/projects/daybake/daybake-cover.png',
     tags: ['Web Design', 'Layout', 'Figma'],
   },
   {
@@ -333,7 +333,7 @@ const projects: Project[] = [
     categoryLabel: 'Frontend',
     description:
       'A collaborative frontend project developed through Jira, sprints and Git',
-    image: '/images/projects/daybake-cover.png',
+    image: '/images/projects/daybake/daybake-cover.png',
     tags: ['React', 'Jira', 'Git'],
   },
   {
@@ -343,7 +343,7 @@ const projects: Project[] = [
     categoryLabel: 'Motion',
     description:
       'A collection of animated interfaces and interaction studies created in Figma',
-    image: '/images/projects/daybake-cover.png',
+    image: '/images/projects/daybake/daybake-cover.png',
     tags: ['Motion', 'Figma', 'Prototyping'],
   },
 ];

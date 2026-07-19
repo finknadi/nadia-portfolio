@@ -152,13 +152,13 @@ export const Footer = () => {
               Designing thoughtful digital experiences
               <span className="text-primary-400">
                 {" "}
-                with clarity, character and motion.
+                with clarity, character and motion
               </span>
             </h2>
 
             <p className="max-w-lg mt-6 text-base md:text-lg leading-relaxed text-neutral-400">
               UX/UI design, Web design, Webflow and interactive experiences
-              created with care and attention to detail.
+              created with care and attention to detail
             </p>
           </motion.div>
 
@@ -247,7 +247,7 @@ export const Footer = () => {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-6 border-t border-neutral-700">
           <p className="font-mono text-xs text-neutral-500 text-center md:text-left">
-            © {currentYear} Nadin Fink. All rights reserved.
+            © {currentYear} Nadin Fink. All rights reserved
           </p>
 
           <div className="flex items-center gap-2 font-mono text-xs">

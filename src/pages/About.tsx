@@ -314,16 +314,16 @@ export const About = () => {
       title: "Frontend Web Development",
       organisation: "TEL-RAN.DE · STARTA INSTITUTE · 960 HOURS",
       description:
-        "I studied how digital interfaces are built — from programming fundamentals to JavaScript, React and project work. This technical foundation helps me design with a clearer understanding of what happens beyond the canvas.",
-      details: ["JavaScript", "React", "HTML & CSS", "Project Work"],
+        "I studied how digital interfaces are built — from programming fundamentals to JavaScript, React and project work. I also worked on a team project using Jira and sprint-based workflows. This technical foundation helps me design with a clearer understanding of what happens beyond the canvas.",
+      details: ["JavaScript", "React", "HTML & CSS", "Jira", "Agile / Scrum"],
       icon: Code2,
     },
     {
-      period: "2022 — 2024",
-      title: "Education in Germany",
-      organisation: "SCHOOLS & CHILDREN’S CLINIC",
+      period: "APR 2022 — JUL 2024",
+      title: "Teaching & Educational Support",
+      organisation: "SCHOOLS & CHILDREN’S CLINIC · GERMANY",
       description:
-        "Working with children in schools and a clinical learning environment taught me to listen closely, adapt to different needs and turn complex information into something clear and understandable.",
+        "I worked in several educational institutions in Germany, teaching in primary and secondary schools while also providing educational support to children in a clinical setting. This experience strengthened my ability to communicate clearly, adapt information and respond to individual learning needs.",
       details: [
         "Communication",
         "Empathy",
@@ -344,7 +344,7 @@ export const About = () => {
     {
       period: "2000",
       title: "Languages, Literature & Education",
-      organisation: "STATE PEDAGOGICAL INSTITUTE OF MELITOPOL",
+      organisation: "STATE PEDAGOGICAL UNIVERSITY",
       description:
         "I completed a five-year university degree in German and English languages and foreign literature. This education gave me a lasting interest in language, structure, communication and the many ways people understand information.",
       note: "Degree officially evaluated by ZAB in Germany.",
@@ -383,7 +383,7 @@ export const About = () => {
   return (
     <div className="min-h-screen bg-bg-page">
       {/* About Hero */}
-            {/* About Hero */}
+      {/* About Hero */}
       <section className="relative overflow-hidden border-b border-neutral-700">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 via-transparent to-accent-500/5" />
@@ -408,53 +408,45 @@ export const About = () => {
 
             {/* Journey Words */}
             <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mt-6">
-              {[
-                'People',
-                'Learning',
-                'Technology',
-                'Design',
-              ].map((word, index) => (
-                <div
-                  key={word}
-                  className="flex items-center gap-3"
-                >
-                  <motion.span
-                    initial={{
-                      opacity: 0,
-                      y: 10,
-                    }}
-                    animate={{
-                      opacity: 1,
-                      y: 0,
-                    }}
-                    transition={{
-                      delay: 1.35 + index * 0.25,
-                      duration: 0.45,
-                    }}
-                    className={`font-mono text-sm md:text-base font-semibold tracking-[0.1em] ${
-                      index === 3
-                        ? 'text-primary-400'
-                        : 'text-neutral-400'
-                    }`}
-                  >
-                    {word}
-                  </motion.span>
-
-                  {index < 3 && (
+              {["People", "Learning", "Technology", "Design"].map(
+                (word, index) => (
+                  <div key={word} className="flex items-center gap-3">
                     <motion.span
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{
-                        delay: 1.5 + index * 0.25,
-                        duration: 0.3,
+                      initial={{
+                        opacity: 0,
+                        y: 10,
                       }}
-                      className="text-accent-500"
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                      }}
+                      transition={{
+                        delay: 1.35 + index * 0.25,
+                        duration: 0.45,
+                      }}
+                      className={`font-mono text-sm md:text-base font-semibold tracking-[0.1em] ${
+                        index === 3 ? "text-primary-400" : "text-neutral-400"
+                      }`}
                     >
-                      ·
+                      {word}
                     </motion.span>
-                  )}
-                </div>
-              ))}
+
+                    {index < 3 && (
+                      <motion.span
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{
+                          delay: 1.5 + index * 0.25,
+                          duration: 0.3,
+                        }}
+                        className="text-accent-500"
+                      >
+                        ·
+                      </motion.span>
+                    )}
+                  </div>
+                ),
+              )}
             </div>
           </div>
 
@@ -480,7 +472,6 @@ export const About = () => {
                 My path into design
                 <br />
                 wasn’t linear.
-
                 <span className="block mt-2 text-primary-400">
                   That’s what makes it valuable.
                 </span>
@@ -500,7 +491,7 @@ export const About = () => {
                   Before I designed interfaces,
                   <br className="hidden sm:block" />
                   <span className="text-primary-300">
-                    {' '}
+                    {" "}
                     I learned to understand people.
                   </span>
                 </motion.p>
@@ -516,8 +507,8 @@ export const About = () => {
                 >
                   Today, I bring the empathy of an educator, the curiosity
                   shaped by international experience and a technical
-                  understanding of frontend development into my work as a
-                  UX/UI designer.
+                  understanding of frontend development into my work as a UX/UI
+                  designer.
                 </motion.p>
 
                 <motion.p
@@ -529,10 +520,9 @@ export const About = () => {
                   }}
                   className="mt-5 text-base md:text-lg leading-relaxed text-neutral-400"
                 >
-                  I enjoy turning complex information into clear
-                  experiences, giving ideas a strong visual character and
-                  using motion to make digital products feel more intuitive
-                  and human.
+                  I enjoy turning complex information into clear experiences,
+                  giving ideas a strong visual character and using motion to
+                  make digital products feel more intuitive and human.
                 </motion.p>
               </div>
             </motion.div>
@@ -576,9 +566,7 @@ export const About = () => {
                       <div className="flex items-center gap-2 font-mono text-xs font-semibold tracking-[0.14em]">
                         <span className="text-accent-500">[</span>
 
-                        <span className="text-primary-300">
-                          NADIN FINK
-                        </span>
+                        <span className="text-primary-300">NADIN FINK</span>
 
                         <span className="text-accent-500">]</span>
                       </div>
@@ -589,10 +577,7 @@ export const About = () => {
                     </div>
 
                     <div className="flex items-center gap-2 rounded-full border border-neutral-700 bg-bg-page/70 px-3 py-2 backdrop-blur-sm">
-                      <MapPin
-                        size={14}
-                        className="text-accent-500"
-                      />
+                      <MapPin size={14} className="text-accent-500" />
 
                       <span className="font-mono text-xs text-neutral--300">
                         Germany

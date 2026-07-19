@@ -1,371 +1,958 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { TerminalHeader } from '../components/TerminalHeader';
-import { Typewriter } from '../components/Typewriter';
-import { Cloud, Container, Code, Database, Terminal as TerminalIcon } from 'lucide-react';
-import { SKILLS_BY_CATEGORY } from '../data/portfolio';
+// import { useState } from 'react';
+// import { motion } from 'framer-motion';
+// import { TerminalHeader } from '../components/TerminalHeader';
+// import { Typewriter } from '../components/Typewriter';
+// import { Cloud, Container, Code, Database, Terminal as TerminalIcon } from 'lucide-react';
+// import { SKILLS_BY_CATEGORY } from '../data/portfolio';
+
+// export const Skills = () => {
+//   const [terminalOutput, setTerminalOutput] = useState<string[]>([]);
+//   const [currentInput, setCurrentInput] = useState('');
+//   const [isProcessing, setIsProcessing] = useState(false);
+
+//   const categories = [
+//     {
+//       id: 'cloud',
+//       title: 'Cloud Platforms',
+//       icon: Cloud,
+//       skills: SKILLS_BY_CATEGORY.cloud,
+//       color: 'text-blue-500',
+//     },
+//     {
+//       id: 'containers',
+//       title: 'Container & Orchestration',
+//       icon: Container,
+//       skills: SKILLS_BY_CATEGORY.containers,
+//       color: 'text-blue-400',
+//     },
+//     {
+//       id: 'infrastructure',
+//       title: 'Infrastructure as Code',
+//       icon: TerminalIcon,
+//       skills: SKILLS_BY_CATEGORY.infrastructure,
+//       color: 'text-purple-500',
+//     },
+//     {
+//       id: 'devops',
+//       title: 'DevOps & Automation',
+//       icon: Code,
+//       skills: SKILLS_BY_CATEGORY.devops,
+//       color: 'text-primary-500',
+//     },
+//     {
+//       id: 'development',
+//       title: 'Development Stack',
+//       icon: Code,
+//       skills: SKILLS_BY_CATEGORY.development,
+//       color: 'text-orange-500',
+//     },
+//     {
+//       id: 'database',
+//       title: 'Databases',
+//       icon: Database,
+//       skills: SKILLS_BY_CATEGORY.database,
+//       color: 'text-red-500',
+//     },
+//   ];
+
+//   const commands = {
+//     help: [
+//       'Available commands:',
+//       '  ls <category>     - List skills in a category',
+//       '  cat <skill>       - Show skill details',
+//       '  levels            - Show proficiency levels',
+//       '  clear             - Clear terminal',
+//       '  help              - Show this help',
+//     ],
+//     levels: [
+//       'Proficiency Levels:',
+//       '  Beginner (30%)     - Basic understanding',
+//       '  Intermediate (60%) - Practical experience',
+//       '  Advanced (85%)     - Production usage',
+//       '  Expert (100%)      - Deep expertise',
+//     ],
+//     clear: () => setTerminalOutput([]),
+//     default: (input: string) => [
+//       `Command not found: ${input}`,
+//       'Type "help" for available commands.',
+//     ],
+//   };
+
+//   const executeCommand = (input: string) => {
+//     setIsProcessing(true);
+
+//     const cmd = input.toLowerCase().trim();
+//     const args = cmd.split(' ');
+//     const mainCmd = args[0];
+
+//     setTimeout(() => {
+//       let output: string[] = [];
+
+//       switch (mainCmd) {
+//         case 'help':
+//           output = commands.help;
+//           break;
+//         case 'levels':
+//           output = commands.levels;
+//           break;
+//         case 'clear':
+//           commands.clear();
+//           setIsProcessing(false);
+//           return;
+//         case 'ls':
+//           const category = args[1];
+//           if (category && categories.find(c => c.id === category)) {
+//             const cat = categories.find(c => c.id === category)!;
+//             output = [
+//               `${cat.title}:`,
+//               ...cat.skills.map(skill => `  ${skill.name} (${skill.level}%)`)
+//             ];
+//           } else {
+//             output = [
+//               'Available categories:',
+//               ...categories.map(cat => `  ${cat.id} - ${cat.title}`)
+//             ];
+//           }
+//           break;
+//         case 'cat':
+//           const skillName = args.slice(1).join(' ');
+//           const skill = SKILLS_BY_CATEGORY.cloud.find(s => s.name.toLowerCase() === skillName) ||
+//                        SKILLS_BY_CATEGORY.containers.find(s => s.name.toLowerCase() === skillName) ||
+//                        SKILLS_BY_CATEGORY.infrastructure.find(s => s.name.toLowerCase() === skillName) ||
+//                        SKILLS_BY_CATEGORY.devops.find(s => s.name.toLowerCase() === skillName) ||
+//                        SKILLS_BY_CATEGORY.development.find(s => s.name.toLowerCase() === skillName) ||
+//                        SKILLS_BY_CATEGORY.database.find(s => s.name.toLowerCase() === skillName);
+
+//           if (skill) {
+//             output = [
+//               `Skill: ${skill.name}`,
+//               `Category: ${skill.category}`,
+//               `Proficiency: ${skill.level}%`,
+//               '',
+//               `Icon: ${skill.icon}`,
+//             ];
+//           } else {
+//             output = [`Skill "${skillName}" not found`];
+//           }
+//           break;
+//         default:
+//           output = commands.default(cmd);
+//       }
+
+//       setTerminalOutput(prev => [...prev, `$ ${input}`, ...output, '']);
+//       setCurrentInput('');
+//       setIsProcessing(false);
+//     }, 500);
+//   };
+
+//   const handleKeyPress = (e: React.KeyboardEvent) => {
+//     if (e.key === 'Enter' && currentInput.trim() && !isProcessing) {
+//       executeCommand(currentInput);
+//     }
+//   };
+
+//   return (
+//     <div className="min-h-screen bg-bg-page">
+//       {/* Terminal Header */}
+//       <TerminalHeader
+//         command="ls -la skills/"
+//         description="Exploring technical expertise across cloud, development, and DevOps domains"
+//       />
+
+//       {/* Skills Categories */}
+//       <section className="py-24">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <motion.div
+//             initial={{ opacity: 0, y: 30 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.6 }}
+//             viewport={{ once: true }}
+//             className="text-center mb-16"
+//           >
+//             <h2 className="font-mono text-3xl md:text-4xl font-bold text-primary-500 mb-4">
+//               Technical Expertise
+//             </h2>
+//             <p className="text-neutral-400 max-w-2xl mx-auto">
+//               Comprehensive skill set spanning cloud infrastructure, development, and DevOps practices
+//             </p>
+//           </motion.div>
+
+//           <div className="grid lg:grid-cols-2 gap-8">
+//             {categories.map((category, categoryIndex) => {
+//               const IconComponent = category.icon;
+//               return (
+//                 <motion.div
+//                   key={category.id}
+//                   initial={{ opacity: 0, y: 30 }}
+//                   whileInView={{ opacity: 1, y: 0 }}
+//                   transition={{ delay: categoryIndex * 0.1, duration: 0.6 }}
+//                   viewport={{ once: true }}
+//                   className="bg-bg-surface border border-neutral-700 rounded-xl overflow-hidden"
+//                 >
+//                   {/* Category Header */}
+//                   <div className="bg-bg-elevated border-b border-neutral-700 p-6">
+//                     <div className="flex items-center space-x-3">
+//                       <div className={`p-2 rounded-lg bg-neutral-800 ${category.color}`}>
+//                         <IconComponent size={24} />
+//                       </div>
+//                       <h3 className="font-mono text-xl font-semibold text-primary-500">
+//                         {category.title}
+//                       </h3>
+//                     </div>
+//                   </div>
+
+//                   {/* Skills Grid */}
+//                   <div className="p-6">
+//                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+//                       {category.skills.map((skill, skillIndex) => (
+//                         <motion.div
+//                           key={skill.name}
+//                           initial={{ opacity: 0, x: -20 }}
+//                           whileInView={{ opacity: 1, x: 0 }}
+//                           transition={{ delay: (categoryIndex * 0.1) + (skillIndex * 0.05), duration: 0.4 }}
+//                           viewport={{ once: true }}
+//                           whileHover={{ scale: 1.02 }}
+//                           className="bg-bg-elevated border border-neutral-700 p-4 rounded-lg hover:border-primary-500/50 transition-all duration-300 group"
+//                         >
+//                           <div className="flex items-center space-x-3 mb-3">
+//                             <img
+//                               src={skill.icon}
+//                               alt={skill.name}
+//                               className="w-8 h-8 filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity"
+//                             />
+//                             <span className="font-mono font-medium text-neutral-200">
+//                               {skill.name}
+//                             </span>
+//                           </div>
+
+//                           {/* Proficiency Bar */}
+//                           <div className="space-y-2">
+//                             <div className="flex justify-between text-xs">
+//                               <span className="text-neutral-400">Proficiency</span>
+//                               <span className="text-primary-500 font-mono">{skill.level}%</span>
+//                             </div>
+//                             <div className="w-full bg-neutral-700 rounded-full h-2">
+//                               <motion.div
+//                                 initial={{ width: 0 }}
+//                                 whileInView={{ width: `${skill.level}%` }}
+//                                 transition={{ delay: (categoryIndex * 0.1) + (skillIndex * 0.05) + 0.3, duration: 0.8 }}
+//                                 viewport={{ once: true }}
+//                                 className="h-2 bg-gradient-to-r from-primary-500 to-primary-700 rounded-full"
+//                               />
+//                             </div>
+//                           </div>
+//                         </motion.div>
+//                       ))}
+//                     </div>
+//                   </div>
+//                 </motion.div>
+//               );
+//             })}
+//           </div>
+//         </div>
+//       </section>
+
+//       {/* Interactive Terminal */}
+//       <section className="py-24 bg-bg-surface/30">
+//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+//           <motion.div
+//             initial={{ opacity: 0, y: 30 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.6 }}
+//             viewport={{ once: true }}
+//             className="text-center mb-16"
+//           >
+//             <h2 className="font-mono text-3xl md:text-4xl font-bold text-primary-500 mb-4">
+//               Interactive Skill Explorer
+//             </h2>
+//             <p className="text-neutral-400 max-w-2xl mx-auto">
+//               Use terminal commands to explore my skills in detail
+//             </p>
+//           </motion.div>
+
+//           <motion.div
+//             initial={{ opacity: 0, y: 30 }}
+//             whileInView={{ opacity: 1, y: 0 }}
+//             transition={{ duration: 0.6, delay: 0.2 }}
+//             viewport={{ once: true }}
+//             className="max-w-4xl mx-auto"
+//           >
+//             <div className="bg-bg-elevated border border-neutral-700 rounded-xl overflow-hidden shadow-card">
+//               {/* Terminal Header */}
+//               <div className="bg-bg-surface border-b border-neutral-700 p-4 flex items-center justify-between">
+//                 <div className="flex items-center space-x-2">
+//                   <div className="w-3 h-3 rounded-full bg-red-500" />
+//                   <div className="w-3 h-3 rounded-full bg-yellow-500" />
+//                   <div className="w-3 h-3 rounded-full bg-primary-500" />
+//                 </div>
+//                 <span className="font-mono text-sm text-neutral-400">skills-terminal</span>
+//               </div>
+
+//               {/* Terminal Content */}
+//               <div className="p-6 font-mono text-sm bg-bg-page h-96 overflow-y-auto">
+//                 {terminalOutput.length === 0 && (
+//                   <div className="text-neutral-400">
+//                     <Typewriter
+//                       text="Welcome to Skills Explorer. Type 'help' to see available commands."
+//                       delay={30}
+//                       className="block"
+//                     />
+//                     <div className="mt-4">
+//                       <span className="text-accent-500">$</span>
+//                       <span className="text-neutral-400 ml-2">ready for input...</span>
+//                     </div>
+//                   </div>
+//                 )}
+
+//                 {terminalOutput.map((line, index) => (
+//                   <div
+//                     key={index}
+//                     className={`${
+//                       line.startsWith('$') ? 'text-accent-500' :
+//                       line.includes('Command not found') ? 'text-red-500' :
+//                       'text-neutral-200'
+//                     }`}
+//                   >
+//                     {line}
+//                   </div>
+//                 ))}
+
+//                 {isProcessing && (
+//                   <div className="flex items-center space-x-2">
+//                     <span className="text-accent-500">$</span>
+//                     <div className="flex space-x-1">
+//                       <div className="w-2 h-2 bg-primary-500 rounded-full animate-bounce" />
+//                       <div className="w-2 h-2 bg-primary-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }} />
+//                       <div className="w-2 h-2 bg-primary-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
+//                     </div>
+//                   </div>
+//                 )}
+
+//                 {/* Input Line */}
+//                 <div className="flex items-center">
+//                   <span className="text-accent-500 mr-2">$</span>
+//                   <input
+//                     type="text"
+//                     value={currentInput}
+//                     onChange={(e) => setCurrentInput(e.target.value)}
+//                     onKeyPress={handleKeyPress}
+//                     className="flex-1 bg-transparent text-primary-500 outline-none placeholder-neutral-600 font-mono"
+//                     placeholder={isProcessing ? "processing..." : "enter command..."}
+//                     disabled={isProcessing}
+//                   />
+//                   {!isProcessing && (
+//                     <div className="w-2 h-5 bg-primary-500 animate-pulse ml-1" />
+//                   )}
+//                 </div>
+//               </div>
+//             </div>
+
+//             {/* Quick Commands */}
+//             <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+//               {[
+//                 { cmd: 'help', desc: 'Show commands' },
+//                 { cmd: 'ls cloud', desc: 'Cloud skills' },
+//                 { cmd: 'levels', desc: 'Proficiency guide' },
+//                 { cmd: 'cat Docker', desc: 'Skill details' },
+//               ].map((item) => (
+//                 <button
+//                   key={item.cmd}
+//                   onClick={() => setCurrentInput(item.cmd)}
+//                   className="p-3 bg-bg-elevated border border-neutral-700 rounded-lg text-left hover:border-primary-500/50 transition-colors group"
+//                 >
+//                   <div className="font-mono text-sm text-primary-500 group-hover:text-primary-400">
+//                     $ {item.cmd}
+//                   </div>
+//                   <div className="text-xs text-neutral-400 mt-1">{item.desc}</div>
+//                 </button>
+//               ))}
+//             </div>
+//           </motion.div>
+//         </div>
+//       </section>
+//     </div>
+//   );
+// };
+
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import {
+  ArrowUpRight,
+  Code2,
+  Component,
+  Figma,
+  Film,
+  Image,
+  Layers,
+  Layout,
+  Music,
+  PenTool,
+  Search,
+  Sparkles,
+  WandSparkles,
+  Workflow,
+} from "lucide-react";
+import { Typewriter } from "../components/Typewriter";
 
 export const Skills = () => {
-  const [terminalOutput, setTerminalOutput] = useState<string[]>([]);
-  const [currentInput, setCurrentInput] = useState('');
-  const [isProcessing, setIsProcessing] = useState(false);
-
-  const categories = [
+  const skillCategories = [
     {
-      id: 'cloud',
-      title: 'Cloud Platforms',
-      icon: Cloud,
-      skills: SKILLS_BY_CATEGORY.cloud,
-      color: 'text-blue-500',
+      number: "01",
+      title: "Design & Research",
+      label: "CORE PRACTICE",
+      description:
+        "The tools and methods I use to understand problems, structure ideas and design clear digital experiences",
+      icon: PenTool,
+      skills: [
+        "UX/UI Design",
+        "Figma",
+        "Wireframing",
+        "Interactive Prototyping",
+        "Responsive Design",
+        "User Flows",
+        "User Journeys",
+        "UX Research",
+        "Landing Pages",
+      ],
     },
     {
-      id: 'containers',
-      title: 'Container & Orchestration',
-      icon: Container,
-      skills: SKILLS_BY_CATEGORY.containers,
-      color: 'text-blue-400',
+      number: "02",
+      title: "Web & Interaction",
+      label: "PRACTICAL EXPERIENCE",
+      description:
+        "Turning visual concepts into responsive websites and interactive experiences that work across devices",
+      icon: Layout,
+      skills: [
+        "Web Design",
+        "Webflow Development",
+        "Responsive Webflow",
+        "Web Interactions",
+        "Figma Animation",
+        "Motion & Prototyping",
+        "Interactive Interfaces",
+      ],
     },
     {
-      id: 'infrastructure',
-      title: 'Infrastructure as Code',
-      icon: TerminalIcon,
-      skills: SKILLS_BY_CATEGORY.infrastructure,
-      color: 'text-purple-500',
+      number: "03",
+      title: "Systems & Structure",
+      label: "PROJECT EXPERIENCE",
+      description:
+        "Building consistent interface structures through reusable components, rules and organised design decisions",
+      icon: Layers,
+      skills: [
+        "Auto Layout",
+        "Components",
+        "Component Variants",
+        "Variables",
+        "Design Systems",
+        "Responsive Components",
+        "Design Documentation",
+      ],
     },
     {
-      id: 'devops',
-      title: 'DevOps & Automation',
-      icon: Code,
-      skills: SKILLS_BY_CATEGORY.devops,
-      color: 'text-primary-500',
-    },
-    {
-      id: 'development',
-      title: 'Development Stack',
-      icon: Code,
-      skills: SKILLS_BY_CATEGORY.development,
-      color: 'text-orange-500',
-    },
-    {
-      id: 'database',
-      title: 'Databases',
-      icon: Database,
-      skills: SKILLS_BY_CATEGORY.database,
-      color: 'text-red-500',
+      number: "04",
+      title: "Technical Foundation",
+      label: "WORKING KNOWLEDGE",
+      description:
+        "A frontend foundation that helps me understand how interfaces move from design into implementation",
+      icon: Code2,
+      skills: [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React",
+        "Git",
+        "GitHub",
+        "Jira",
+        "Agile / Scrum",
+        "Sprint Workflow",
+        "Responsive Development",
+      ],
     },
   ];
 
-  const commands = {
-    help: [
-      'Available commands:',
-      '  ls <category>     - List skills in a category',
-      '  cat <skill>       - Show skill details',
-      '  levels            - Show proficiency levels',
-      '  clear             - Clear terminal',
-      '  help              - Show this help',
-    ],
-    levels: [
-      'Proficiency Levels:',
-      '  Beginner (30%)     - Basic understanding',
-      '  Intermediate (60%) - Practical experience',
-      '  Advanced (85%)     - Production usage',
-      '  Expert (100%)      - Deep expertise',
-    ],
-    clear: () => setTerminalOutput([]),
-    default: (input: string) => [
-      `Command not found: ${input}`,
-      'Type "help" for available commands.',
-    ],
-  };
+  const aiTools = [
+    {
+      name: "ChatGPT",
+      purpose: "Research, ideation and creative problem-solving",
+      icon: Sparkles,
+    },
+    {
+      name: "Midjourney",
+      purpose: "Visual concepts and image generation",
+      icon: Image,
+    },
+    {
+      name: "Kling",
+      purpose: "AI video generation and visual motion",
+      icon: Film,
+    },
+    {
+      name: "Runway",
+      purpose: "Video creation, editing and experimentation",
+      icon: Film,
+    },
+    {
+      name: "Nano Banana Pro",
+      purpose: "AI photography and image transformation",
+      icon: WandSparkles,
+    },
+    {
+      name: "Suno",
+      purpose: "Music, songs and audio experimentation",
+      icon: Music,
+    },
+  ];
 
-  const executeCommand = (input: string) => {
-    setIsProcessing(true);
-    
-    const cmd = input.toLowerCase().trim();
-    const args = cmd.split(' ');
-    const mainCmd = args[0];
-
-    setTimeout(() => {
-      let output: string[] = [];
-      
-      switch (mainCmd) {
-        case 'help':
-          output = commands.help;
-          break;
-        case 'levels':
-          output = commands.levels;
-          break;
-        case 'clear':
-          commands.clear();
-          setIsProcessing(false);
-          return;
-        case 'ls':
-          const category = args[1];
-          if (category && categories.find(c => c.id === category)) {
-            const cat = categories.find(c => c.id === category)!;
-            output = [
-              `${cat.title}:`,
-              ...cat.skills.map(skill => `  ${skill.name} (${skill.level}%)`)
-            ];
-          } else {
-            output = [
-              'Available categories:',
-              ...categories.map(cat => `  ${cat.id} - ${cat.title}`)
-            ];
-          }
-          break;
-        case 'cat':
-          const skillName = args.slice(1).join(' ');
-          const skill = SKILLS_BY_CATEGORY.cloud.find(s => s.name.toLowerCase() === skillName) ||
-                       SKILLS_BY_CATEGORY.containers.find(s => s.name.toLowerCase() === skillName) ||
-                       SKILLS_BY_CATEGORY.infrastructure.find(s => s.name.toLowerCase() === skillName) ||
-                       SKILLS_BY_CATEGORY.devops.find(s => s.name.toLowerCase() === skillName) ||
-                       SKILLS_BY_CATEGORY.development.find(s => s.name.toLowerCase() === skillName) ||
-                       SKILLS_BY_CATEGORY.database.find(s => s.name.toLowerCase() === skillName);
-
-          if (skill) {
-            output = [
-              `Skill: ${skill.name}`,
-              `Category: ${skill.category}`,
-              `Proficiency: ${skill.level}%`,
-              '',
-              `Icon: ${skill.icon}`,
-            ];
-          } else {
-            output = [`Skill "${skillName}" not found`];
-          }
-          break;
-        default:
-          output = commands.default(cmd);
-      }
-
-      setTerminalOutput(prev => [...prev, `$ ${input}`, ...output, '']);
-      setCurrentInput('');
-      setIsProcessing(false);
-    }, 500);
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && currentInput.trim() && !isProcessing) {
-      executeCommand(currentInput);
-    }
-  };
+  const workflow = [
+    {
+      number: "01",
+      title: "Understand",
+      description: "Research the context, audience and real user needs",
+      icon: Search,
+    },
+    {
+      number: "02",
+      title: "Structure",
+      description: "Turn information into clear flows and meaningful hierarchy",
+      icon: Workflow,
+    },
+    {
+      number: "03",
+      title: "Design",
+      description:
+        "Create an expressive visual system with clarity and purpose",
+      icon: Figma,
+    },
+    {
+      number: "04",
+      title: "Prototype & Build",
+      description:
+        "Test interactions and bring the final experience to life in Webflow or frontend code",
+      icon: Component,
+    },
+  ];
 
   return (
     <div className="min-h-screen bg-bg-page">
-      {/* Terminal Header */}
-      <TerminalHeader
-        command="ls -la skills/"
-        description="Exploring technical expertise across cloud, development, and DevOps domains"
-      />
+      {/* Skills Hero */}
+      <section className="relative overflow-hidden border-b border-neutral-700">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 via-transparent to-accent-500/5" />
 
-      {/* Skills Categories */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+          {/* Animated Page Introduction */}
+          <div className="mb-10 md:mb-14">
+            <div className="inline-flex items-center font-mono text-sm font-semibold tracking-[0.18em]">
+              <span className="mr-2 text-accent-500">[</span>
+
+              <Typewriter
+                text="EXPLORING / SKILLS"
+                delay={70}
+                loop={false}
+                className="text-primary-400"
+              />
+
+              <span className="terminal-cursor ml-1" />
+
+              <span className="ml-2 text-accent-500">]</span>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-x-3 gap-y-2 mt-6">
+              {["Research", "Design", "Motion", "Technology"].map(
+                (word, index) => (
+                  <div key={word} className="flex items-center gap-3">
+                    <motion.span
+                      initial={{
+                        opacity: 0,
+                        y: 10,
+                      }}
+                      animate={{
+                        opacity: 1,
+                        y: 0,
+                      }}
+                      transition={{
+                        delay: 1.35 + index * 0.25,
+                        duration: 0.45,
+                      }}
+                      className={`font-mono text-sm md:text-base font-semibold tracking-[0.1em] ${
+                        index === 3 ? "text-primary-400" : "text-neutral-400"
+                      }`}
+                    >
+                      {word}
+                    </motion.span>
+
+                    {index < 3 && (
+                      <motion.span
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{
+                          delay: 1.5 + index * 0.25,
+                          duration: 0.3,
+                        }}
+                        className="text-accent-500"
+                      >
+                        ·
+                      </motion.span>
+                    )}
+                  </div>
+                ),
+              )}
+            </div>
+          </div>
+
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
+            initial={{
+              opacity: 0,
+              y: 24,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              delay: 2.2,
+              duration: 0.7,
+            }}
+            className="max-w-5xl"
           >
-            <h2 className="font-mono text-3xl md:text-4xl font-bold text-primary-500 mb-4">
-              Technical Expertise
-            </h2>
-            <p className="text-neutral-400 max-w-2xl mx-auto">
-              Comprehensive skill set spanning cloud infrastructure, development, and DevOps practices
+            <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.08] text-neutral-50">
+              A multidisciplinary toolkit{" "}
+              <span className="text-primary-400">
+                for thoughtful digital experiences
+              </span>
+            </h1>
+
+            <p className="max-w-3xl mt-8 text-lg md:text-xl leading-relaxed text-neutral-300">
+              I combine design thinking, visual communication, interaction,
+              Webflow, frontend foundations and AI-assisted creativity to move
+              ideas from early exploration to tangible digital experiences.
             </p>
           </motion.div>
+        </div>
+      </section>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            {categories.map((category, categoryIndex) => {
+      {/* Skill Categories */}
+      <section className="py-14 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 24,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="mb-12 md:mb-16"
+          >
+            <div className="inline-flex items-center gap-2 mb-5 font-mono text-sm font-semibold tracking-[0.18em]">
+              <span className="text-accent-500">[</span>
+              <span className="text-primary-400">01 / CAPABILITIES</span>
+              <span className="text-accent-500">]</span>
+            </div>
+
+            <h2 className="max-w-4xl font-sans text-3xl sm:text-4xl md:text-6xl font-semibold leading-tight text-neutral-50">
+              Skills connected by
+              <span className="text-primary-400"> one design process</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {skillCategories.map((category, categoryIndex) => {
               const IconComponent = category.icon;
+
               return (
-                <motion.div
-                  key={category.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: categoryIndex * 0.1, duration: 0.6 }}
-                  viewport={{ once: true }}
-                  className="bg-bg-surface border border-neutral-700 rounded-xl overflow-hidden"
+                <motion.article
+                  key={category.title}
+                  initial={{
+                    opacity: 0,
+                    y: 28,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  transition={{
+                    duration: 0.55,
+                    delay: categoryIndex * 0.1,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.15,
+                  }}
+                  whileHover={{
+                    y: -5,
+                    borderColor: "#B455FF",
+                  }}
+                  className="group rounded-2xl border border-neutral-700 bg-bg-elevated p-6 md:p-8 shadow-card transition-all duration-300"
                 >
-                  {/* Category Header */}
-                  <div className="bg-bg-elevated border-b border-neutral-700 p-6">
-                    <div className="flex items-center space-x-3">
-                      <div className={`p-2 rounded-lg bg-neutral-800 ${category.color}`}>
-                        <IconComponent size={24} />
+                  <div className="flex items-start justify-between gap-5">
+                    <div className="flex items-center gap-4">
+                      <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-primary-500/20 bg-primary-500/10">
+                        <IconComponent size={23} className="text-primary-400" />
                       </div>
-                      <h3 className="font-mono text-xl font-semibold text-primary-500">
-                        {category.title}
-                      </h3>
+
+                      <div>
+                        <p className="font-mono text-xs tracking-[0.14em] text-accent-500">
+                          {category.number} / {category.label}
+                        </p>
+
+                        <h3 className="mt-2 font-sans text-2xl font-semibold text-neutral-50">
+                          {category.title}
+                        </h3>
+                      </div>
                     </div>
+
+                    <ArrowUpRight className="h-5 w-5 shrink-0 text-neutral-500 group-hover:text-primary-400 group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-200" />
                   </div>
 
-                  {/* Skills Grid */}
-                  <div className="p-6">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      {category.skills.map((skill, skillIndex) => (
-                        <motion.div
-                          key={skill.name}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ delay: (categoryIndex * 0.1) + (skillIndex * 0.05), duration: 0.4 }}
-                          viewport={{ once: true }}
-                          whileHover={{ scale: 1.02 }}
-                          className="bg-bg-elevated border border-neutral-700 p-4 rounded-lg hover:border-primary-500/50 transition-all duration-300 group"
-                        >
-                          <div className="flex items-center space-x-3 mb-3">
-                            <img
-                              src={skill.icon}
-                              alt={skill.name}
-                              className="w-8 h-8 filter brightness-0 invert opacity-70 group-hover:opacity-100 transition-opacity"
-                            />
-                            <span className="font-mono font-medium text-neutral-200">
-                              {skill.name}
-                            </span>
-                          </div>
-                          
-                          {/* Proficiency Bar */}
-                          <div className="space-y-2">
-                            <div className="flex justify-between text-xs">
-                              <span className="text-neutral-400">Proficiency</span>
-                              <span className="text-primary-500 font-mono">{skill.level}%</span>
-                            </div>
-                            <div className="w-full bg-neutral-700 rounded-full h-2">
-                              <motion.div
-                                initial={{ width: 0 }}
-                                whileInView={{ width: `${skill.level}%` }}
-                                transition={{ delay: (categoryIndex * 0.1) + (skillIndex * 0.05) + 0.3, duration: 0.8 }}
-                                viewport={{ once: true }}
-                                className="h-2 bg-gradient-to-r from-primary-500 to-primary-700 rounded-full"
-                              />
-                            </div>
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
+                  <p className="mt-6 leading-relaxed text-neutral-400">
+                    {category.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2 mt-7">
+                    {category.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-full border border-neutral-700 bg-bg-surface px-3 py-2 font-mono text-xs text-neutral-300 hover:border-primary-500 hover:text-primary-300 transition-colors duration-200"
+                      >
+                        {skill}
+                      </span>
+                    ))}
                   </div>
-                </motion.div>
+                </motion.article>
               );
             })}
           </div>
         </div>
       </section>
 
-      {/* Interactive Terminal */}
-      <section className="py-24 bg-bg-surface/30">
+      {/* Creative AI Toolkit */}
+      <section className="py-14 md:py-24 bg-bg-surface/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{
+              opacity: 0,
+              y: 24,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="text-center mb-16"
+            className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16"
           >
-            <h2 className="font-mono text-3xl md:text-4xl font-bold text-primary-500 mb-4">
-              Interactive Skill Explorer
-            </h2>
-            <p className="text-neutral-400 max-w-2xl mx-auto">
-              Use terminal commands to explore my skills in detail
-            </p>
-          </motion.div>
+            <div className="lg:col-span-5">
+              <div className="inline-flex items-center gap-2 mb-5 font-mono text-sm font-semibold tracking-[0.18em]">
+                <span className="text-accent-500">[</span>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
-          >
-            <div className="bg-bg-elevated border border-neutral-700 rounded-xl overflow-hidden shadow-card">
-              {/* Terminal Header */}
-              <div className="bg-bg-surface border-b border-neutral-700 p-4 flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500" />
-                  <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                  <div className="w-3 h-3 rounded-full bg-primary-500" />
-                </div>
-                <span className="font-mono text-sm text-neutral-400">skills-terminal</span>
+                <span className="text-primary-400">
+                  02 / CREATIVE AI TOOLKIT
+                </span>
+
+                <span className="text-accent-500">]</span>
               </div>
 
-              {/* Terminal Content */}
-              <div className="p-6 font-mono text-sm bg-bg-page h-96 overflow-y-auto">
-                {terminalOutput.length === 0 && (
-                  <div className="text-neutral-400">
-                    <Typewriter
-                      text="Welcome to Skills Explorer. Type 'help' to see available commands."
-                      delay={30}
-                      className="block"
-                    />
-                    <div className="mt-4">
-                      <span className="text-accent-500">$</span>
-                      <span className="text-neutral-400 ml-2">ready for input...</span>
-                    </div>
-                  </div>
-                )}
+              <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight text-neutral-50">
+                AI as a creative
+                <span className="text-primary-400"> collaborator</span>
+              </h2>
 
-                {terminalOutput.map((line, index) => (
-                  <div
-                    key={index}
-                    className={`${
-                      line.startsWith('$') ? 'text-accent-500' : 
-                      line.includes('Command not found') ? 'text-red-500' :
-                      'text-neutral-200'
-                    }`}
-                  >
-                    {line}
-                  </div>
-                ))}
-
-                {isProcessing && (
-                  <div className="flex items-center space-x-2">
-                    <span className="text-accent-500">$</span>
-                    <div className="flex space-x-1">
-                      <div className="w-2 h-2 bg-primary-500 rounded-full animate-bounce" />
-                      <div className="w-2 h-2 bg-primary-500 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }} />
-                      <div className="w-2 h-2 bg-primary-500 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
-                    </div>
-                  </div>
-                )}
-
-                {/* Input Line */}
-                <div className="flex items-center">
-                  <span className="text-accent-500 mr-2">$</span>
-                  <input
-                    type="text"
-                    value={currentInput}
-                    onChange={(e) => setCurrentInput(e.target.value)}
-                    onKeyPress={handleKeyPress}
-                    className="flex-1 bg-transparent text-primary-500 outline-none placeholder-neutral-600 font-mono"
-                    placeholder={isProcessing ? "processing..." : "enter command..."}
-                    disabled={isProcessing}
-                  />
-                  {!isProcessing && (
-                    <div className="w-2 h-5 bg-primary-500 animate-pulse ml-1" />
-                  )}
-                </div>
-              </div>
+              <p className="mt-6 text-lg leading-relaxed text-neutral-400">
+                I use AI tools to explore ideas, visualise concepts and
+                experiment with images, video and sound. They support my process
+                without replacing design judgment or human intention.
+              </p>
             </div>
 
-            {/* Quick Commands */}
-            <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
-              {[
-                { cmd: 'help', desc: 'Show commands' },
-                { cmd: 'ls cloud', desc: 'Cloud skills' },
-                { cmd: 'levels', desc: 'Proficiency guide' },
-                { cmd: 'cat Docker', desc: 'Skill details' },
-              ].map((item) => (
-                <button
-                  key={item.cmd}
-                  onClick={() => setCurrentInput(item.cmd)}
-                  className="p-3 bg-bg-elevated border border-neutral-700 rounded-lg text-left hover:border-primary-500/50 transition-colors group"
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {aiTools.map((tool, index) => {
+                const IconComponent = tool.icon;
+
+                return (
+                  <motion.div
+                    key={tool.name}
+                    initial={{
+                      opacity: 0,
+                      y: 18,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      duration: 0.4,
+                      delay: index * 0.07,
+                    }}
+                    viewport={{ once: true }}
+                    whileHover={{
+                      scale: 1.02,
+                      borderColor: "#B455FF",
+                    }}
+                    className="flex items-start gap-4 rounded-xl border border-neutral-700 bg-bg-elevated p-5 transition-all duration-300"
+                  >
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-primary-500/10">
+                      <IconComponent size={20} className="text-primary-400" />
+                    </div>
+
+                    <div>
+                      <h3 className="font-mono font-semibold text-neutral-100">
+                        {tool.name}
+                      </h3>
+
+                      <p className="mt-2 text-sm leading-relaxed text-neutral-400">
+                        {tool.purpose}
+                      </p>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Workflow */}
+      <section className="py-14 md:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 24,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-12 md:mb-16"
+          >
+            <div className="inline-flex items-center gap-2 mb-5 font-mono text-sm font-semibold tracking-[0.18em]">
+              <span className="text-accent-500">[</span>
+
+              <span className="text-primary-400">
+                03 / HOW I CONNECT THE DOTS
+              </span>
+
+              <span className="text-accent-500">]</span>
+            </div>
+
+            <h2 className="font-sans text-3xl sm:text-4xl md:text-6xl font-semibold leading-tight text-neutral-50">
+              From understanding
+              <span className="text-primary-400"> to implementation</span>
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {workflow.map((step, index) => {
+              const IconComponent = step.icon;
+
+              return (
+                <motion.article
+                  key={step.title}
+                  initial={{
+                    opacity: 0,
+                    y: 20,
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0,
+                  }}
+                  transition={{
+                    duration: 0.45,
+                    delay: index * 0.1,
+                  }}
+                  viewport={{ once: true }}
+                  whileHover={{
+                    y: -5,
+                    borderColor: "#B455FF",
+                  }}
+                  className="relative rounded-xl border border-neutral-700 bg-bg-elevated p-5 transition-all duration-300"
                 >
-                  <div className="font-mono text-sm text-primary-500 group-hover:text-primary-400">
-                    $ {item.cmd}
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-xs text-accent-500">
+                      {step.number}
+                    </span>
+
+                    <IconComponent size={19} className="text-primary-400" />
                   </div>
-                  <div className="text-xs text-neutral-400 mt-1">{item.desc}</div>
-                </button>
-              ))}
+
+                  <h3 className="mt-8 font-sans text-xl font-semibold text-neutral-50">
+                    {step.title}
+                  </h3>
+
+                  <p className="mt-3 text-sm leading-relaxed text-neutral-400">
+                    {step.description}
+                  </p>
+
+                  {index < workflow.length - 1 && (
+                    <div className="hidden lg:block absolute top-1/2 -right-3 z-10 -translate-y-1/2 font-mono text-accent-500">
+                      →
+                    </div>
+                  )}
+                </motion.article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="pt-12 pb-24 md:py-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.97,
+            }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="rounded-2xl border border-primary-500/30 bg-gradient-to-br from-bg-elevated to-primary-900/20 p-8 md:p-12 text-center shadow-glow"
+          >
+            <div className="inline-flex items-center gap-2 mb-6 font-mono text-sm font-semibold tracking-[0.18em]">
+              <span className="text-accent-500">[</span>
+
+              <span className="text-primary-400">SKILLS IN ACTION</span>
+
+              <span className="text-accent-500">]</span>
+            </div>
+
+            <h2 className="font-sans text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight text-neutral-50">
+              See how these skills
+              <span className="text-primary-400">
+                {" "}
+                come together in practice
+              </span>
+            </h2>
+
+            <p className="max-w-2xl mx-auto mt-6 text-lg leading-relaxed text-neutral-300">
+              Explore selected work combining research, visual design,
+              interaction, Webflow and creative technology
+            </p>
+
+            <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+              <Link
+                to="/projects"
+                className="group inline-flex items-center justify-center rounded-lg border-2 border-primary-500 bg-primary-500 px-8 py-4 font-semibold text-bg-page shadow-glow hover:border-primary-400 hover:bg-primary-400 transition-all duration-200"
+              >
+                View Selected Work
+                <ArrowUpRight className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+              </Link>
+
+              <Link
+                to="/contact"
+                className="inline-flex items-center justify-center rounded-lg border-2 border-neutral-600 bg-bg-elevated px-8 py-4 font-semibold text-neutral-100 hover:border-primary-500 hover:text-primary-400 transition-all duration-200"
+              >
+                Let’s Connect
+              </Link>
             </div>
           </motion.div>
         </div>

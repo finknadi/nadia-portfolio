@@ -383,7 +383,6 @@ export const About = () => {
   return (
     <div className="min-h-screen bg-bg-page">
       {/* About Hero */}
-      {/* About Hero */}
       <section className="relative overflow-hidden border-b border-neutral-700">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 via-transparent to-accent-500/5" />
@@ -549,11 +548,11 @@ export const About = () => {
 
                 {/* Image Card */}
                 <div className="relative overflow-hidden rounded-2xl border border-primary-500/60 bg-bg-elevated shadow-card group-hover:border-primary-400 transition-colors duration-300">
-                  <div className="aspect-[4/5] overflow-hidden">
+                  <div className="h-[430px] sm:h-[500px] lg:h-auto lg:aspect-[4/5] overflow-hidden">
                     <img
                       src="/images/nadin-fink-portrait.png"
                       alt="Portrait of Nadin Fink"
-                      className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
+                      className="h-full w-full object-cover object-[center_35%] transition-transform duration-700 group-hover:scale-[1.02]"
                     />
                   </div>
 

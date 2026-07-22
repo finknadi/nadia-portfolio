@@ -255,28 +255,24 @@
 //   );
 // };
 
-import { useState } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import {
-  ArrowUpRight,
-  Clock3,
-  Filter,
-} from 'lucide-react';
-import { Typewriter } from '../components/Typewriter';
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowUpRight, Clock3, Filter } from "lucide-react";
+import { Typewriter } from "../components/Typewriter";
 
 type ProjectCategory =
-  | 'all'
-  | 'web-design'
-  | 'ux-ui'
-  | 'webflow'
-  | 'frontend'
-  | 'motion';
+  | "all"
+  | "web-design"
+  | "ux-ui"
+  | "webflow"
+  | "frontend"
+  | "motion";
 
 type Project = {
   id: number;
   title: string;
-  category: Exclude<ProjectCategory, 'all'>;
+  category: Exclude<ProjectCategory, "all">;
   categoryLabel: string;
   description: string;
   image: string;
@@ -287,64 +283,65 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
-    title: 'DayBake',
-    category: 'web-design',
-    categoryLabel: 'Web Design',
+    title: "DayBake",
+    category: "web-design",
+    categoryLabel: "Web Design",
     description:
-      'A warm editorial landing page for an artisan bakery with local delivery',
-    image: '/images/projects/daybake/daybake-video-cover.png',
-    tags: ['Web Design', 'UI Design', 'Figma'],
-    path: '/projects/daybake',
+      "A warm editorial landing page for an artisan bakery with local delivery",
+    image: "/images/projects/daybake/daybake-video-cover.png",
+    tags: ["Web Design", "UI Design", "Figma"],
+    path: "/projects/daybake",
   },
   {
     id: 2,
-    title: 'Swisswatch',
-    category: 'webflow',
-    categoryLabel: 'Webflow',
+    title: "Swisswatch",
+    category: "webflow",
+    categoryLabel: "Webflow",
     description:
-      'A responsive product experience combining precise layout and interaction',
-    image: '/images/projects/daybake/daybake-video-coverr.png',
-    tags: ['Webflow', 'Responsive Design', 'Interaction'],
+      "A responsive product experience combining precise layout and interaction",
+    image: "/images/projects/swisswatch/swisswatch-multi-device.png",
+    tags: ["Webflow", "Responsive Design", "Interaction"],
+    path: "/projects/swisswatch",
   },
   {
     id: 3,
-    title: 'Tea Moment',
-    category: 'ux-ui',
-    categoryLabel: 'UX/UI',
+    title: "Tea Moment",
+    category: "ux-ui",
+    categoryLabel: "UX/UI",
     description:
-      'A digital product concept shaped around structure, clarity and visual atmosphere',
-    image: '/images/projects/daybake/daybake-cover.png',
-    tags: ['UX/UI', 'User Flow', 'Prototype'],
+      "A digital product concept shaped around structure, clarity and visual atmosphere",
+    image: "/images/projects/daybake/daybake-cover.png",
+    tags: ["UX/UI", "User Flow", "Prototype"],
   },
   {
     id: 4,
-    title: 'Homie',
-    category: 'web-design',
-    categoryLabel: 'Web Design',
+    title: "Homie",
+    category: "web-design",
+    categoryLabel: "Web Design",
     description:
-      'A focused website concept exploring hierarchy, composition and visual storytelling',
-    image: '/images/projects/daybake/daybake-cover.png',
-    tags: ['Web Design', 'Layout', 'Figma'],
+      "A focused website concept exploring hierarchy, composition and visual storytelling",
+    image: "/images/projects/daybake/daybake-cover.png",
+    tags: ["Web Design", "Layout", "Figma"],
   },
   {
     id: 5,
-    title: 'Buildwise',
-    category: 'frontend',
-    categoryLabel: 'Frontend',
+    title: "Buildwise",
+    category: "frontend",
+    categoryLabel: "Frontend",
     description:
-      'A collaborative frontend project developed through Jira, sprints and Git',
-    image: '/images/projects/daybake/daybake-cover.png',
-    tags: ['React', 'Jira', 'Git'],
+      "A collaborative frontend project developed through Jira, sprints and Git",
+    image: "/images/projects/daybake/daybake-cover.png",
+    tags: ["React", "Jira", "Git"],
   },
   {
     id: 6,
-    title: 'Motion Experiments',
-    category: 'motion',
-    categoryLabel: 'Motion',
+    title: "Motion Experiments",
+    category: "motion",
+    categoryLabel: "Motion",
     description:
-      'A collection of animated interfaces and interaction studies created in Figma',
-    image: '/images/projects/daybake/daybake-cover.png',
-    tags: ['Motion', 'Figma', 'Prototyping'],
+      "A collection of animated interfaces and interaction studies created in Figma",
+    image: "/images/projects/daybake/daybake-cover.png",
+    tags: ["Motion", "Figma", "Prototyping"],
   },
 ];
 
@@ -353,87 +350,69 @@ const filters: {
   label: string;
 }[] = [
   {
-    id: 'all',
-    label: 'All Work',
+    id: "all",
+    label: "All Work",
   },
   {
-    id: 'web-design',
-    label: 'Web Design',
+    id: "web-design",
+    label: "Web Design",
   },
   {
-    id: 'ux-ui',
-    label: 'UX/UI',
+    id: "ux-ui",
+    label: "UX/UI",
   },
   {
-    id: 'webflow',
-    label: 'Webflow',
+    id: "webflow",
+    label: "Webflow",
   },
   {
-    id: 'frontend',
-    label: 'Frontend',
+    id: "frontend",
+    label: "Frontend",
   },
   {
-    id: 'motion',
-    label: 'Motion',
+    id: "motion",
+    label: "Motion",
   },
 ];
 
-const openingWords = [
-  'Research',
-  'Design',
-  'Interaction',
-  'Technology',
-];
+const openingWords = ["UX/UI", "Web Design", "Webflow", "Frontend"];
 
-const getCategoryStyles = (
-  category: Exclude<ProjectCategory, 'all'>
-) => {
+const getCategoryStyles = (category: Exclude<ProjectCategory, "all">) => {
   switch (category) {
-    case 'motion':
+    case "motion":
       return {
-        badge:
-          'border-accent-500/40 bg-accent-500/15 text-accent-700',
-        icon:
-          'text-accent-500 group-hover:text-accent-500',
+        badge: "border-accent-500/40 bg-accent-500/15 text-accent-700",
+        icon: "text-accent-500 group-hover:text-accent-500",
       };
 
-    case 'frontend':
+    case "frontend":
       return {
-        badge:
-          'border-sky-400/40 bg-sky-400/15 text-sky-600',
-        icon:
-          'text-sky-400 group-hover:text-sky-300',
+        badge: "border-sky-400/40 bg-sky-400/15 text-sky-600",
+        icon: "text-sky-400 group-hover:text-sky-300",
       };
 
     default:
       return {
-        badge:
-          'border-primary-500/40 bg-primary-500/15 text-primary-600',
-        icon:
-          'text-primary-400 group-hover:text-primary-300',
+        badge: "border-primary-500/40 bg-primary-500/15 text-primary-600",
+        icon: "text-primary-400 group-hover:text-primary-300",
       };
   }
 };
 
 export const Projects = () => {
-  const [activeFilter, setActiveFilter] =
-    useState<ProjectCategory>('all');
+  const [activeFilter, setActiveFilter] = useState<ProjectCategory>("all");
 
   const visibleProjects =
-    activeFilter === 'all'
+    activeFilter === "all"
       ? projects
-      : projects.filter(
-          (project) => project.category === activeFilter
-        );
+      : projects.filter((project) => project.category === activeFilter);
 
   const getFilterCount = (category: ProjectCategory) => {
-    if (category === 'all') {
+    if (category === "all") {
       return projects.length;
     }
 
-    return projects.filter(
-      (project) => project.category === category
-    ).length;
+    return projects.filter((project) => project.category === category).length;
   };
 
   return (
@@ -443,61 +422,68 @@ export const Projects = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 via-transparent to-accent-500/5" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          {/* Typewriter Label */}
+
+          {/* Animated Page Introduction */}
           <div className="mb-10 md:mb-14">
             <div className="inline-flex items-center font-mono text-sm font-semibold tracking-[0.18em]">
-              <span className="text-accent-500">[</span>
+              <span className="mr-2 text-accent-500">[</span>
 
-              <span className="mx-2 text-primary-400">
-                <Typewriter
-                  text="OPENING / SELECTED WORK"
-                  delay={55}
-                />
-              </span>
+              <Typewriter
+                text="OPENING / SELECTED WORK"
+                delay={55}
+                loop={false}
+                className="text-primary-400"
+              />
 
-              <span className="text-accent-500">]</span>
+              <span className="terminal-cursor ml-1" />
+
+              <span className="ml-2 text-accent-500">]</span>
+            </div>
+
+            <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2">
+              {openingWords.map((word, index) => (
+                <div key={word} className="flex items-center gap-3">
+                  <motion.span
+                    initial={{
+                      opacity: 0,
+                      y: 10,
+                    }}
+                    animate={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    transition={{
+                      delay: 1.35 + index * 0.25,
+                      duration: 0.45,
+                    }}
+                    className={`font-mono text-sm font-semibold tracking-[0.1em] md:text-base ${
+                      index === openingWords.length - 1
+                        ? "text-primary-400"
+                        : "text-neutral-400"
+                    }`}
+                  >
+                    {word}
+                  </motion.span>
+
+                  {index < openingWords.length - 1 && (
+                    <motion.span
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{
+                        delay: 1.5 + index * 0.25,
+                        duration: 0.3,
+                      }}
+                      className="text-accent-500"
+                    >
+                      ·
+                    </motion.span>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
 
           <div className="max-w-6xl">
-            {/* Animated Keywords */}
-            <div className="flex flex-wrap items-center gap-y-2 mb-10 font-mono text-sm sm:text-base md:text-lg font-semibold tracking-[0.12em]">
-              {openingWords.map((word, index) => (
-                <motion.span
-                  key={word}
-                  initial={{
-                    opacity: 0,
-                    y: 8,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    delay: 1.3 + index * 0.22,
-                    duration: 0.4,
-                  }}
-                  className="inline-flex items-center"
-                >
-                  <span
-                    className={
-                      index === openingWords.length - 1
-                        ? 'text-primary-400'
-                        : 'text-neutral-400'
-                    }
-                  >
-                    {word}
-                  </span>
-
-                  {index < openingWords.length - 1 && (
-                    <span className="mx-3 text-accent-500">
-                      ·
-                    </span>
-                  )}
-                </motion.span>
-              ))}
-            </div>
-
             {/* Main Heading */}
             <motion.h1
               initial={{
@@ -514,7 +500,7 @@ export const Projects = () => {
               }}
               className="max-w-6xl font-sans text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.05] text-neutral-50"
             >
-              Selected work shaped by{' '}
+              Selected work shaped by{" "}
               <span className="text-primary-400">
                 curiosity, clarity and character
               </span>
@@ -536,9 +522,8 @@ export const Projects = () => {
               }}
               className="max-w-3xl mt-8 text-lg md:text-xl leading-relaxed text-neutral-300"
             >
-              A growing collection of digital experiences where
-              visual direction, thoughtful structure and interaction
-              come together
+              A growing collection of digital experiences where visual
+              direction, thoughtful structure and interaction come together
             </motion.p>
           </div>
         </div>
@@ -558,16 +543,16 @@ export const Projects = () => {
                   onClick={() => setActiveFilter(filter.id)}
                   className={`group inline-flex items-center gap-3 rounded-lg border px-4 py-3 font-mono text-sm font-medium transition-all duration-300 ${
                     isActive
-                      ? 'border-primary-500 bg-primary-500 text-bg-page shadow-glow'
-                      : 'border-neutral-700 bg-bg-elevated text-neutral-300 hover:border-primary-500/50 hover:text-primary-400'
+                      ? "border-primary-500 bg-primary-500 text-bg-page shadow-glow"
+                      : "border-neutral-700 bg-bg-elevated text-neutral-300 hover:border-primary-500/50 hover:text-primary-400"
                   }`}
                 >
                   <Filter
                     size={15}
                     className={
                       isActive
-                        ? 'text-bg-page'
-                        : 'text-neutral-500 group-hover:text-primary-400'
+                        ? "text-bg-page"
+                        : "text-neutral-500 group-hover:text-primary-400"
                     }
                   />
 
@@ -576,8 +561,8 @@ export const Projects = () => {
                   <span
                     className={`inline-flex h-6 min-w-6 items-center justify-center rounded-full px-1.5 text-xs ${
                       isActive
-                        ? 'bg-bg-page/20 text-bg-page'
-                        : 'bg-neutral-700 text-neutral-400'
+                        ? "bg-bg-page/20 text-bg-page"
+                        : "bg-neutral-700 text-neutral-400"
                     }`}
                   >
                     {getFilterCount(filter.id)}
@@ -613,9 +598,7 @@ export const Projects = () => {
               <div className="mb-4 font-mono text-sm font-semibold tracking-[0.18em]">
                 <span className="text-accent-500">[</span>
 
-                <span className="mx-2 text-primary-400">
-                  PROJECT LIBRARY
-                </span>
+                <span className="mx-2 text-primary-400">PROJECT LIBRARY</span>
 
                 <span className="text-accent-500">]</span>
               </div>
@@ -626,8 +609,8 @@ export const Projects = () => {
             </div>
 
             <p className="max-w-md text-base md:text-lg leading-relaxed text-neutral-400">
-              Selected projects across design, interaction,
-              Webflow and frontend development
+              Selected projects across design, interaction, Webflow and frontend
+              development
             </p>
           </motion.div>
 
@@ -637,8 +620,7 @@ export const Projects = () => {
           >
             <AnimatePresence mode="popLayout">
               {visibleProjects.map((project, index) => {
-                const categoryStyles =
-                  getCategoryStyles(project.category);
+                const categoryStyles = getCategoryStyles(project.category);
 
                 const cardContent = (
                   <>
@@ -697,9 +679,7 @@ export const Projects = () => {
 
                       <div className="mt-auto pt-7">
                         <span className="inline-flex items-center font-mono text-sm font-semibold text-primary-400">
-                          {project.path
-                            ? 'View Project'
-                            : 'Coming Soon'}
+                          {project.path ? "View Project" : "Coming Soon"}
 
                           {project.path && (
                             <ArrowUpRight
@@ -747,9 +727,7 @@ export const Projects = () => {
                         {cardContent}
                       </Link>
                     ) : (
-                      <div className="flex h-full flex-col">
-                        {cardContent}
-                      </div>
+                      <div className="flex h-full flex-col">{cardContent}</div>
                     )}
                   </motion.article>
                 );
@@ -799,22 +777,19 @@ export const Projects = () => {
             <div className="font-mono text-sm font-semibold tracking-[0.18em]">
               <span className="text-accent-500">[</span>
 
-              <span className="mx-2 text-primary-400">
-                LET&apos;S CREATE
-              </span>
+              <span className="mx-2 text-primary-400">LET&apos;S CREATE</span>
 
               <span className="text-accent-500">]</span>
             </div>
 
             <h2 className="max-w-3xl mx-auto mt-6 font-sans text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight text-neutral-50">
-              Looking for a designer to shape your next digital
-              experience?
+              Looking for a designer to shape your next digital experience?
             </h2>
 
             <p className="max-w-2xl mx-auto mt-6 text-lg leading-relaxed text-neutral-300">
               I’m open to UX/UI roles, Webflow projects and creative
-              collaborations focused on thoughtful, accessible and
-              visually distinctive products
+              collaborations focused on thoughtful, accessible and visually
+              distinctive products
             </p>
 
             <div className="flex flex-col sm:flex-row justify-center gap-4 mt-9">

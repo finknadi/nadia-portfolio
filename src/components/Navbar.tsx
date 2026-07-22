@@ -170,16 +170,16 @@ export const Navbar = () => {
       path: '/projects',
       label: 'Selected Work',
     },
-    {
-      number: '05',
-      path: '/blog',
-      label: 'Blog',
-    },
-    {
-      number: '06',
-      path: '/case-studies',
-      label: 'Case Studies',
-    },
+    // {
+    //   number: '05',
+    //   path: '/blog',
+    //   label: 'Blog',
+    // },
+    // {
+    //   number: '06',
+    //   path: '/case-studies',
+    //   label: 'Case Studies',
+    // },
     {
       number: '07',
       path: '/contact',

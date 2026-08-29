@@ -833,7 +833,7 @@ export const Swisswatch = () => {
               </p>
 
               <a
-                href="https://nadin-fink-swiss-watch.webflow.io/"
+                href="https://swisswatch-portfolio.webflow.io/"
                 target="_blank"
                 rel="noreferrer"
                 className="group mt-8 inline-flex items-center justify-center rounded-lg bg-primary-500 px-7 py-4 font-semibold text-bg-page shadow-glow transition-all duration-200 hover:bg-primary-400"

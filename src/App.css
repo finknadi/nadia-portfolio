@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap");
 
-/* Cyber Terminal Global Styles */
 * {
   box-sizing: border-box;
 }
@@ -72,14 +71,6 @@ body {
 ::-moz-selection {
   background: #b455ff;
   color: #0a0e11;
-}
-
-/* Focus Styles */
-.focus\:ring-cyber:focus {
-  outline: none;
-  box-shadow:
-    0 0 0 2px #b455ff,
-    0 0 16px rgba(0, 255, 65, 0.3);
 }
 
 /* Terminal Cursor */

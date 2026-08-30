@@ -267,7 +267,7 @@ export const Swisswatch = () => {
             className="group relative overflow-hidden rounded-2xl border border-neutral-700 bg-[#F1EFEC] shadow-card"
           >
             <img
-              src="/images/projects/swisswatch/swisswatch-responsive-showcase.png"
+              src="/images/projects/swisswatch/swisswatch-mult-device.webp"
               alt="Swisswatch responsive landing page shown on desktop tablet and mobile devices"
               className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.01]"
             />
@@ -555,7 +555,7 @@ export const Swisswatch = () => {
             className="mt-12 overflow-hidden rounded-2xl border border-neutral-700 bg-[#F1EFEC] shadow-card"
           >
             <img
-              src="/images/projects/swisswatch/swisswatch-multi-device.png"
+              src="/images/projects/swisswatch/swisswatch-multi-device.webp"
               alt="Swisswatch desktop tablet and mobile responsive presentation"
               className="w-full h-auto"
               loading="lazy"
@@ -628,7 +628,7 @@ export const Swisswatch = () => {
               className="overflow-hidden rounded-2xl border border-neutral-700 bg-bg-elevated"
             >
               <img
-                src="/images/projects/swisswatch/swisswatch-webflow-structure.png"
+                src="/images/projects/swisswatch/swisswatch-webflow-structure.webp"
                 alt="Swisswatch Webflow Navigator showing the structured statistics section"
                 className="w-full h-auto"
                 loading="lazy"
@@ -699,7 +699,7 @@ export const Swisswatch = () => {
               className="overflow-hidden rounded-2xl border border-neutral-700 bg-bg-elevated"
             >
               <img
-                src="/images/projects/swisswatch/swisswatch-alt-text.png"
+                src="/images/projects/swisswatch/swisswatch-alt-text.webp"
                 alt="Webflow image settings showing custom alternative text"
                 className="h-full w-full scale-[1.01] object-cover object-[65%_center]"
                 loading="lazy"
@@ -714,7 +714,7 @@ export const Swisswatch = () => {
               className="overflow-hidden rounded-2xl border border-neutral-700 bg-bg-elevated"
             >
               <img
-                src="/images/projects/swisswatch/swisswatch-open-graph.png"
+                src="/images/projects/swisswatch/swisswatch-open-graph.webp"
                 alt="Swisswatch Open Graph sharing preview in Webflow"
                 className="w-full h-auto"
                 loading="lazy"
@@ -851,7 +851,7 @@ export const Swisswatch = () => {
               className="group relative max-w-[460px] justify-self-center overflow-hidden rounded-2xl border border-neutral-700 bg-[#F1EFEC] shadow-card lg:justify-self-end"
             >
               <img
-                src="/images/projects/swisswatch/swisswatch-live-project-workspace.png"
+                src="/images/projects/swisswatch/swisswatch-live-project-workspace.webp"
                 alt="Swisswatch landing page displayed on a laptop"
                 className="h-auto w-full object-contain object-center transition-transform duration-700 group-hover:scale-[1.01]"
                 loading="lazy"

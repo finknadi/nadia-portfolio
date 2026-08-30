@@ -1,55 +1,66 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowUpRight, Code2, ExternalLink } from 'lucide-react';
-import { Grid3DBackground } from '../components/Grid3D';
-import { Typewriter } from '../components/Typewriter';
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import { ArrowUpRight, Code2, ExternalLink } from "lucide-react";
+import { Grid3DBackground } from "../components/Grid3D";
+import { Typewriter } from "../components/Typewriter";
 
 export const Home = () => {
   const focusAreas = [
     {
-      number: '01',
-      title: 'UX/UI Design',
+      number: "01",
+      title: "UX/UI Design",
       description:
-        'Clear, intuitive and visually expressive digital interfaces.',
+        "Clear, intuitive and visually expressive digital interfaces.",
     },
     {
-      number: '02',
-      title: 'Web Design',
+      number: "02",
+      title: "Web Design",
       description:
-        'Thoughtful and distinctive websites built around content and user needs.',
+        "Thoughtful and distinctive websites built around content and user needs.",
     },
     {
-      number: '03',
-      title: 'Webflow',
+      number: "03",
+      title: "Webflow",
       description:
-        'Responsive Webflow websites with thoughtful interactions and motion.',
+        "Responsive Webflow websites with thoughtful interactions and motion.",
     },
     {
-      number: '04',
-      title: 'Motion & Prototyping',
+      number: "04",
+      title: "Motion & Prototyping",
       description:
-        'Interactive prototypes and animations that make interfaces feel alive.',
+        "Interactive prototypes and animations that make interfaces feel alive.",
     },
   ];
 
   const expertise = [
-    'UX/UI Design',
-    'Web Design',
-    'Webflow',
-    'Motion & Prototyping',
-    'Interactive Interfaces',
-    'Frontend',
-    'UX Research',
-    'AI Visuals',
+    "UX/UI Design",
+    "Web Design",
+    "Webflow",
+    "Motion & Prototyping",
+    "Interactive Interfaces",
+    "Frontend",
+    "UX Research",
+    "AI Visuals",
   ];
 
   return (
     <div className="min-h-screen bg-bg-page relative overflow-hidden">
       {/* Animated Background */}
-      <Grid3DBackground />
+      {/* <Grid3DBackground /> */}
 
       {/* Hero Section */}
       <section className="relative min-h-[calc(100vh-5rem)] flex items-start lg:items-center justify-center px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 h-full w-full object-cover"
+        >
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
+        </video>
+
+        <div className="absolute inset-0 bg-bg-page/70" />
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -66,20 +77,14 @@ export const Home = () => {
             >
               <span className="text-accent-500">[</span>
 
-              <span className="text-primary-400">
-                HELLO, WORLD
-              </span>
+              <span className="text-primary-400">HELLO, WORLD</span>
 
               <span className="text-accent-500">]</span>
             </motion.div>
 
             {/* Typewriter Name */}
             <div className="font-mono text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-primary-500">
-              <Typewriter
-                text=" Nadin Fink"
-                delay={150}
-                loop={false}
-              />
+              <Typewriter text=" Nadin Fink" delay={150} loop={false} />
 
               <span className="terminal-cursor ml-2" />
             </div>
@@ -138,7 +143,6 @@ export const Home = () => {
                 className="group inline-flex items-center justify-center px-8 py-4 bg-primary-500 border-2 border-primary-500 text-bg-page hover:bg-primary-400 hover:border-primary-400 transition-all duration-200 font-semibold tracking-wide rounded-lg shadow-glow hover:shadow-card-hover"
               >
                 <Code2 className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-
                 View Selected Work
               </Link>
 
@@ -147,7 +151,6 @@ export const Home = () => {
                 className="group inline-flex items-center justify-center px-8 py-4 border-2 border-neutral-600 bg-bg-elevated text-neutral-100 hover:border-primary-500 hover:text-primary-400 transition-all duration-200 font-semibold tracking-wide rounded-lg"
               >
                 <ExternalLink className="mr-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-
                 About Me
               </Link>
             </motion.div>
@@ -172,10 +175,7 @@ export const Home = () => {
 
             <h2 className="font-sans text-3xl md:text-5xl font-semibold text-neutral-50 max-w-3xl leading-tight">
               Design, technology and motion
-              <span className="text-primary-400">
-                {' '}
-                in one creative process
-              </span>
+              <span className="text-primary-400"> in one creative process</span>
             </h2>
           </motion.div>
 
@@ -198,7 +198,7 @@ export const Home = () => {
                 viewport={{ once: true }}
                 whileHover={{
                   y: -6,
-                  borderColor: '#B455FF',
+                  borderColor: "#B455FF",
                 }}
                 className="group bg-bg-elevated border border-neutral-700 p-6 rounded-xl shadow-card transition-all duration-300"
               >
@@ -236,9 +236,7 @@ export const Home = () => {
             <div className="inline-flex items-center gap-3 mb-4 font-mono text-sm tracking-[0.18em]">
               <span className="text-accent-500">[02]</span>
 
-              <span className="text-primary-400">
-                CREATIVE PRACTICE
-              </span>
+              <span className="text-primary-400">CREATIVE PRACTICE</span>
             </div>
 
             <h2 className="font-sans text-3xl md:text-5xl font-semibold text-neutral-50 mb-5">
@@ -270,13 +268,13 @@ export const Home = () => {
                 viewport={{ once: true }}
                 whileHover={{
                   scale: 1.02,
-                  borderColor: '#B455FF',
+                  borderColor: "#B455FF",
                 }}
                 className="group bg-bg-elevated border border-neutral-700 px-6 py-5 rounded-xl flex items-center justify-between transition-all duration-300"
               >
                 <div className="flex items-center gap-4">
                   <span className="font-mono text-sm text-primary-400">
-                    {String(index + 1).padStart(2, '0')}
+                    {String(index + 1).padStart(2, "0")}
                   </span>
 
                   <span className="font-mono text-base font-semibold text-neutral-100 group-hover:text-primary-300 transition-colors">
@@ -321,9 +319,7 @@ export const Home = () => {
             <div className="inline-flex items-center gap-2 mb-6 font-mono text-sm tracking-[0.18em]">
               <span className="text-accent-500">[</span>
 
-              <span className="text-primary-400">
-                LET&apos;S CONNECT
-              </span>
+              <span className="text-primary-400">LET&apos;S CONNECT</span>
 
               <span className="text-accent-500">]</span>
             </div>
@@ -351,7 +347,6 @@ export const Home = () => {
                 className="inline-flex items-center justify-center px-8 py-4 border-2 border-neutral-600 text-neutral-100 hover:border-primary-500 hover:text-primary-400 font-semibold rounded-lg transition-all duration-200"
               >
                 Selected Work
-
                 <ArrowUpRight className="ml-2 h-5 w-5" />
               </Link>
             </div>

@@ -4,7 +4,6 @@ import {
   ArrowUpRight,
   BriefcaseBusiness,
   CheckCircle,
-  Github,
   Linkedin,
   Mail,
   MapPin,
@@ -142,12 +141,7 @@ export const Contact = () => {
       value: "linkedin.com/in/nadinfink",
       href: CONTACT.social.linkedin,
     },
-    {
-      icon: Github,
-      label: "GitHub",
-      value: "github.com/nadinlab",
-      href: CONTACT.social.github,
-    },
+
     {
       icon: MapPin,
       label: "Location",
@@ -158,95 +152,95 @@ export const Contact = () => {
 
   return (
     <main className="min-h-screen bg-bg-page">
+     
+
       {/* Opening */}
+      <section className="relative overflow-hidden border-b border-neutral-700">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 via-transparent to-accent-500/5" />
 
-     {/* Opening */}
-<section className="relative overflow-hidden border-b border-neutral-700">
-  <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 via-transparent to-accent-500/5" />
+        <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
+            {/* Hero text */}
+            <div className="lg:col-span-7">
+              <div className="mb-10 md:mb-14">
+                <div className="inline-flex items-center font-mono text-sm font-semibold tracking-[0.18em]">
+                  <span className="mr-2 text-accent-500">[</span>
 
-  <div className="relative z-10 mx-auto max-w-7xl px-4 py-16 sm:px-6 md:py-24 lg:px-8">
-    <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
-      {/* Hero text */}
-      <div className="lg:col-span-7">
-        <div className="mb-10 md:mb-14">
-          <div className="inline-flex items-center font-mono text-sm font-semibold tracking-[0.18em]">
-            <span className="mr-2 text-accent-500">[</span>
+                  <Typewriter
+                    text="LET'S CONNECT"
+                    delay={70}
+                    loop={false}
+                    className="text-primary-400"
+                  />
 
-            <Typewriter
-              text="LET'S CONNECT"
-              delay={70}
-              loop={false}
-              className="text-primary-400"
-            />
+                  <span className="terminal-cursor ml-1" />
 
-            <span className="terminal-cursor ml-1" />
+                  <span className="ml-2 text-accent-500">]</span>
+                </div>
+              </div>
 
-            <span className="ml-2 text-accent-500">]</span>
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  y: 24,
+                }}
+                animate={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                transition={{
+                  delay: 1.35,
+                  duration: 0.7,
+                }}
+                className="max-w-5xl"
+              >
+                <h1 className="font-sans text-4xl font-semibold leading-[1.08] text-neutral-50 sm:text-5xl md:text-6xl lg:text-7xl">
+                  Let&apos;s create something meaningful{" "}
+                  <span className="text-primary-400">together</span>
+                </h1>
+
+                <p className="mt-8 max-w-3xl text-lg leading-relaxed text-neutral-300 md:text-xl">
+                  I&apos;m open to UX UI and web design opportunities as well as
+                  thoughtful collaborations and digital projects
+                </p>
+              </motion.div>
+            </div>
+
+            {/* Hero portrait */}
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: 32,
+              }}
+              animate={{
+                opacity: 1,
+                x: 0,
+              }}
+              transition={{
+                delay: 1.55,
+                duration: 0.75,
+              }}
+              className="lg:col-span-5 lg:self-start"
+            >
+              <div className="group mx-auto flex max-w-md flex-col overflow-hidden rounded-2xl border border-neutral-700 bg-bg-elevated shadow-card lg:h-[430px] lg:max-w-none xl:h-[450px]">
+                <div className="aspect-[4/5] overflow-hidden lg:min-h-0 lg:flex-1 lg:aspect-auto">
+                  <img
+                    src="/images/contact-portrait.webp"
+                    alt="Portrait of Nadin Fink"
+                    className="h-full w-full object-cover object-[center_18%] transition-transform duration-700 group-hover:scale-[1.02]"
+                  />
+                </div>
+
+                <div className="shrink-0 border-t border-neutral-700 px-6 py-4 sm:px-8">
+                  <p className="font-mono text-sm leading-relaxed text-neutral-400">
+                    UX UI Design · Web Design · Webflow
+                  </p>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
-
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 24,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
-          transition={{
-            delay: 1.35,
-            duration: 0.7,
-          }}
-          className="max-w-5xl"
-        >
-          <h1 className="font-sans text-4xl font-semibold leading-[1.08] text-neutral-50 sm:text-5xl md:text-6xl lg:text-7xl">
-            Let&apos;s create something meaningful{" "}
-            <span className="text-primary-400">together</span>
-          </h1>
-
-          <p className="mt-8 max-w-3xl text-lg leading-relaxed text-neutral-300 md:text-xl">
-            I&apos;m open to UX UI and web design opportunities as well as
-            thoughtful collaborations and digital projects
-          </p>
-        </motion.div>
-      </div>
-
-      {/* Hero portrait */}
-      <motion.div
-        initial={{
-          opacity: 0,
-          x: 32,
-        }}
-        animate={{
-          opacity: 1,
-          x: 0,
-        }}
-        transition={{
-          delay: 1.55,
-          duration: 0.75,
-        }}
-        className="lg:col-span-5 lg:self-start"
-      >
-        <div className="group mx-auto flex max-w-md flex-col overflow-hidden rounded-2xl border border-neutral-700 bg-bg-elevated shadow-card lg:h-[430px] lg:max-w-none xl:h-[450px]">
-          <div className="aspect-[4/5] overflow-hidden lg:min-h-0 lg:flex-1 lg:aspect-auto">
-            <img
-              src="/images/contact-portrait.png"
-              alt="Portrait of Nadin Fink"
-              className="h-full w-full object-cover object-[center_18%] transition-transform duration-700 group-hover:scale-[1.02]"
-            />
-          </div>
-
-          <div className="shrink-0 border-t border-neutral-700 px-6 py-4 sm:px-8">
-            <p className="font-mono text-sm leading-relaxed text-neutral-400">
-              UX UI Design · Web Design · Webflow
-            </p>
-          </div>
-        </div>
-      </motion.div>
-    </div>
-  </div>
-</section>
+      </section>
 
       {/* Contact content */}
       <section className="py-16 md:py-24">
@@ -479,14 +473,10 @@ export const Contact = () => {
                         key={method.label}
                         href={method.href}
                         target={
-                          method.label === "LinkedIn" ||
-                          method.label === "GitHub"
-                            ? "_blank"
-                            : undefined
+                          method.label === "LinkedIn" ? "_blank" : undefined
                         }
                         rel={
-                          method.label === "LinkedIn" ||
-                          method.label === "GitHub"
+                          method.label === "LinkedIn"
                             ? "noopener noreferrer"
                             : undefined
                         }

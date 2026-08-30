@@ -96,21 +96,21 @@ const finalScreens = [
     title: "Discovery starts with context",
     description:
       "The home page combines quick entry points, categories, local inspiration and guided recommendations",
-    image: "/images/projects/local-loop/local-loop-home.png",
+    image: "/images/projects/local-loop/local-loop-home.webp",
   },
   {
     label: "CATALOG",
     title: "Focused filtering and comparison",
     description:
       "The catalogue surfaces time, price, distance and social context while keeping comparison lightweight",
-    image: "/images/projects/local-loop/local-loop-catalog.png",
+    image: "/images/projects/local-loop/local-loop-catalog.webp",
   },
   {
     label: "ACTIVITY",
     title: "Clear information before commitment",
     description:
       "The activity page brings practical details, atmosphere and next steps together in one structured view",
-    image: "/images/projects/local-loop/local-loop-activity.png",
+    image: "/images/projects/local-loop/local-loop-activity.webp",
   },
 ];
 
@@ -222,7 +222,7 @@ export const LocalLoop = () => {
       className="group relative overflow-hidden rounded-2xl border border-neutral-700 bg-bg-elevated shadow-card"
     >
       <img
-        src="/images/projects/local-loop/local-loop-responsive.png"
+        src="/images/projects/local-loop/local-loop-responsive.webp"
         alt="Local Loop responsive interface shown across desktop tablet and mobile devices"
         className="w-full h-auto transition-transform duration-700 group-hover:scale-[1.01]"
       />
@@ -418,7 +418,7 @@ export const LocalLoop = () => {
         className="self-start overflow-hidden rounded-2xl border border-neutral-700 bg-bg-elevated"
       >
         <img
-          src="/images/projects/local-loop/local-loop-personas.png"
+          src="/images/projects/local-loop/local-loop-personas.webp"
           alt="Local Loop user personas including Anna Max and Laura"
           className="w-full h-auto"
           loading="lazy"
@@ -456,7 +456,7 @@ export const LocalLoop = () => {
       className="overflow-hidden rounded-2xl border border-neutral-700 bg-white"
     >
       <img
-        src="/images/projects/local-loop/local-loop-cjm.png"
+        src="/images/projects/local-loop/local-loop-cjm.webp"
         alt="Customer journey map for discovering and booking local activities"
         className="w-full h-auto"
         loading="lazy"
@@ -493,7 +493,7 @@ export const LocalLoop = () => {
       className="overflow-hidden rounded-2xl border border-neutral-700 bg-white"
     >
       <img
-        src="/images/projects/local-loop/local-loop-user-flow.png"
+        src="/images/projects/local-loop/local-loop-user-flow.webp"
         alt="Local Loop user flow showing direct search and guided AI-assisted discovery"
         className="w-full h-auto"
         loading="lazy"
@@ -590,7 +590,7 @@ export const LocalLoop = () => {
         className="overflow-hidden rounded-2xl border border-neutral-700 bg-white"
       >
         <img
-          src="/images/projects/local-loop/local-loop-moodboard.png"
+          src="/images/projects/local-loop/local-loop-moodboard.webp"
           alt="Local Loop moodboard with editorial typography community photography and urban references"
           className="w-full h-auto"
           loading="lazy"
@@ -628,7 +628,7 @@ export const LocalLoop = () => {
       className="overflow-hidden rounded-2xl border border-neutral-700 bg-white"
     >
       <img
-        src="/images/projects/local-loop/local-loop-wireframes.png"
+        src="/images/projects/local-loop/local-loop-wireframes.webp"
         alt="Wireframes for Local Loop home catalogue and activity detail pages"
         className="w-full h-auto"
         loading="lazy"
@@ -667,7 +667,7 @@ export const LocalLoop = () => {
         className="overflow-hidden rounded-2xl border border-neutral-700 bg-white p-6 sm:p-10"
       >
         <img
-          src="/images/projects/local-loop/local-loop-brand.png"
+          src="/images/projects/local-loop/local-loop-brand.webp"
           alt="Local Loop brand logo and Discover Connect Belong tagline"
           className="w-full h-auto"
           loading="lazy"
@@ -705,7 +705,7 @@ export const LocalLoop = () => {
       className="overflow-hidden rounded-2xl border border-neutral-700 bg-white"
     >
       <img
-        src="/images/projects/local-loop/local-loop-design-system.png"
+        src="/images/projects/local-loop/local-loop-design-system.webp"
         alt="Local Loop color styles and typography system"
         className="w-full h-auto"
         loading="lazy"
@@ -825,7 +825,7 @@ export const LocalLoop = () => {
         className="overflow-hidden rounded-2xl border border-neutral-700 bg-bg-elevated shadow-card"
       >
         <img
-          src="/images/projects/local-loop/local-loop-responsive.png"
+          src="/images/projects/local-loop/local-loop-responsive.webp"
           alt="Responsive Webflow implementation of Local Loop across multiple devices"
           className="w-full h-auto"
           loading="lazy"

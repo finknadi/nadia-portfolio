@@ -286,7 +286,7 @@ export const About = () => {
                 <div className="relative overflow-hidden rounded-2xl border border-primary-500/60 bg-bg-elevated shadow-card group-hover:border-primary-400 transition-colors duration-300">
                   <div className="h-[430px] sm:h-[500px] lg:h-auto lg:aspect-[4/5] overflow-hidden">
                     <img
-                      src="/images/nadin-fink-portrait.png"
+                      src="/images/nadin-fink-portrait.webp"
                       alt="Portrait of Nadin Fink"
                       className="h-full w-full object-cover object-[center_35%] transition-transform duration-700 group-hover:scale-[1.02]"
                     />

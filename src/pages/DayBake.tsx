@@ -253,7 +253,7 @@ export const DayBake = () => {
             {/* Main process image */}
             <figure className="group relative min-h-[320px] overflow-hidden rounded-2xl border border-primary-500/30 bg-bg-elevated shadow-card sm:min-h-[420px] md:min-h-[560px]">
               <img
-                src="/images/projects/daybake/daybake-hero-process.png"
+                src="/images/projects/daybake/daybake-hero-process.webp"
                 alt="Artisan bakers preparing bread in the DayBake bakery"
                 className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.02]"
               />
@@ -270,7 +270,7 @@ export const DayBake = () => {
             {/* Oven image */}
             <figure className="group relative min-h-[280px] overflow-hidden rounded-2xl border border-neutral-700 bg-bg-elevated shadow-card sm:min-h-[360px] md:min-h-[560px]">
               <img
-                src="/images/projects/daybake/daybake-hero-oven.png"
+                src="/images/projects/daybake/daybake-hero-oven.webp"
                 alt="Fresh artisan loaves coming out of the bakery oven"
                 className="absolute inset-0 h-full w-full object-cover object-[65%_center] transition-transform duration-700 group-hover:scale-[1.02]"
               />
@@ -504,7 +504,7 @@ export const DayBake = () => {
               className="overflow-hidden rounded-2xl border border-neutral-700 bg-neutral-50"
             >
               <img
-                src="/images/projects/daybake/daybake-moodboard.png"
+                src="/images/projects/daybake/daybake-moodboard.webp"
                 alt="DayBake moodboard with bakery photography typography and colour references"
                 className="w-full h-auto"
                 loading="lazy"
@@ -586,7 +586,7 @@ export const DayBake = () => {
                 className="flex min-h-52 items-center justify-center rounded-2xl bg-[#F7F3EA] p-8"
               >
                 <img
-                  src="/images/projects/daybake/daybake-logo.png"
+                  src="/images/projects/daybake/daybake-logo.webp"
                   alt="DayBake wordmark and wheat symbol"
                   className="w-full max-w-64 h-auto"
                   loading="lazy"
@@ -601,7 +601,7 @@ export const DayBake = () => {
                 className="flex min-h-52 items-center justify-center rounded-2xl bg-[#46543A] p-10"
               >
                 <img
-                  src="/images/projects/daybake/daybake-symbol.png"
+                  src="/images/projects/daybake/daybake-symbol.webp"
                   alt="DayBake wheat symbol"
                   className="w-20 h-20 object-contain brightness-0 invert"
                   loading="lazy"
@@ -812,7 +812,7 @@ export const DayBake = () => {
               className="overflow-hidden rounded-2xl border border-neutral-700 bg-neutral-100"
             >
               <img
-                src="/images/projects/daybake/daybake-prototype.png"
+                src="/images/projects/daybake/daybake-prototype.webp"
                 alt="DayBake interactive prototype connections in Figma"
                 className="w-full h-auto"
                 loading="lazy"
@@ -824,7 +824,7 @@ export const DayBake = () => {
             <VideoDemo
               youtubeId="X-w6HM-fH3M"
               title="DayBake – Interactive Landing Page Demo"
-              cover="/images/projects/daybake/daybake-video-cover.png"
+              cover="/images/projects/daybake/daybake-video-cover.webp"
               alt="DayBake Landing Page Video Demo"
               buttonLabel="Watch Video Demo"
             />
@@ -907,7 +907,7 @@ export const DayBake = () => {
             className="mt-12 mx-auto max-w-xl overflow-hidden rounded-2xl border border-neutral-700 bg-neutral-50 shadow-card"
           >
             <img
-              src="/images/projects/daybake/daybake-full-page.png"
+              src="/images/projects/daybake/daybake-full-page.webp"
               alt="Complete DayBake desktop landing page"
               className="w-full h-auto"
               loading="lazy"

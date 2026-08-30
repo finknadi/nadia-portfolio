@@ -32,7 +32,7 @@ const projects: Project[] = [
     categoryLabel: "Web Design",
     description:
       "A warm editorial landing page for an artisan bakery with local delivery",
-    image: "/images/projects/daybake/daybake-video-cover.png",
+    image: "/images/projects/daybake/daybake-video-cover.webp",
     tags: ["Web Design", "UI Design", "Figma"],
     path: "/projects/daybake",
   },
@@ -43,7 +43,7 @@ const projects: Project[] = [
     categoryLabel: "Webflow",
     description:
       "A responsive product experience combining precise layout and interaction",
-    image: "/images/projects/swisswatch/swisswatch-multi-device.png",
+    image: "/images/projects/swisswatch/swisswatch-multi-device.webp",
     tags: ["Webflow", "Responsive Design", "Interaction"],
     path: "/projects/swisswatch",
   },
@@ -54,7 +54,7 @@ const projects: Project[] = [
     categoryLabel: "UX/UI",
     description:
       "An end-to-end UX UI case study shaped by research, user flows and responsive design",
-    image: "/images/projects/local-loop/local-loop-responsive.png",
+    image: "/images/projects/local-loop/local-loop-responsive.webp",
     tags: ["UX/UI", "Research", "Webflow"],
     path: "/projects/local-loop",
   },
@@ -65,7 +65,7 @@ const projects: Project[] = [
     categoryLabel: "Frontend",
     description:
       "A responsive construction website focused on usability and frontend implementation",
-    image: "/images/projects/buildwise/buildwise-cover.png",
+    image: "/images/projects/buildwise/buildwise-cover.webp",
     tags: ["Frontend", "Responsive", "Web Design"],
   },
   {
@@ -75,7 +75,7 @@ const projects: Project[] = [
     categoryLabel: "Motion",
     description:
       "A collection of animated interfaces and visual motion studies created in Figma",
-    image: "/images/projects/motion-experiments/motion-experiments-cover.png",
+    image: "/images/projects/motion-experiments/motion-experiments-cover.webp",
     tags: ["Motion", "Figma", "Prototyping"],
   },
   {
@@ -85,7 +85,7 @@ const projects: Project[] = [
     categoryLabel: "UI Design",
     description:
       "A collection of visual UI concepts and interface explorations created in Figma",
-    image: "/images/projects/ui-experiments/ui-experiments-cover.png",
+    image: "/images/projects/ui-experiments/ui-experiments-cover.webp",
     tags: ["UI Design", "Figma", "Visual Design"],
   },
 ];

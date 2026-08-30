@@ -50,14 +50,26 @@ export const Home = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-[calc(100vh-5rem)] flex items-start lg:items-center justify-center px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
+        {/* Mobile video */}
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="absolute inset-0 h-full w-full object-cover"
+          className="absolute inset-0 h-full w-full object-cover md:hidden"
         >
-          <source src="/videos/hero-background.mp4" type="video/mp4" />
+          <source src="/videos/hero-background-mobile.mp4" type="video/mp4" />
+        </video>
+
+        {/* Tablet + Desktop video */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 hidden h-full w-full object-cover md:block"
+        >
+          <source src="/videos/hero-background-desktop.mp4" type="video/mp4" />
         </video>
 
         <div className="absolute inset-0 bg-bg-page/70" />

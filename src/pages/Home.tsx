@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Code2, ExternalLink } from "lucide-react";
-import { Grid3DBackground } from "../components/Grid3D";
 import { Typewriter } from "../components/Typewriter";
 
 export const Home = () => {
@@ -46,7 +45,6 @@ export const Home = () => {
   return (
     <div className="min-h-screen bg-bg-page relative overflow-hidden">
       {/* Animated Background */}
-      {/* <Grid3DBackground /> */}
 
       {/* Hero Section */}
       <section className="relative min-h-[calc(100vh-5rem)] flex items-start lg:items-center justify-center px-4 sm:px-6 lg:px-8 py-10 lg:py-16">

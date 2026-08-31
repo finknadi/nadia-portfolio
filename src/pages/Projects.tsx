@@ -570,14 +570,14 @@ export const Projects = () => {
             <div className="flex flex-col sm:flex-row justify-center gap-4 mt-9">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center rounded-lg bg-primary-500 px-8 py-4 font-semibold text-bg-page shadow-glow transition-all duration-300 hover:bg-primary-400"
+                className="inline-flex sm:w-[250px] items-center justify-center rounded-lg bg-primary-500 px-8 py-4 font-semibold text-bg-page shadow-glow transition-all duration-300 hover:bg-primary-400"
               >
                 Let&apos;s Connect
               </Link>
 
               <Link
                 to="/about"
-                className="inline-flex items-center justify-center rounded-lg border-2 border-neutral-600 bg-bg-surface px-8 py-4 font-semibold text-neutral-100 transition-all duration-300 hover:border-primary-500 hover:text-primary-400"
+                className="inline-flex sm:w-[250px] items-center justify-center rounded-lg border-2 border-neutral-600 bg-bg-surface px-8 py-4 font-semibold text-neutral-100 transition-all duration-300 hover:border-primary-500 hover:text-primary-400"
               >
                 About Me
               </Link>

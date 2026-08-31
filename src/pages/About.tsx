@@ -37,12 +37,17 @@ export const About = () => {
   const timeline = [
     {
       period: "DEC 2025 — AUG 2026",
-      status: "CURRENT",
+
       title: "UX/UI Design & AI",
-      organisation: "IT CAREER HUB",
+
+      organisation: "IT CAREER HUB · 1240 HOURS",
+
       description:
-        "I’m currently developing my practice in UX/UI design, user research, prototyping, responsive interfaces and Webflow. The programme also explores AI integration and contemporary creative workflows.",
+        "I developed my practice in UX/UI design, user research, prototyping, responsive interfaces and Webflow. The programme also covered AI integration and contemporary creative workflows.",
+
       details: ["UX/UI Design", "User Research", "Webflow", "AI Integration"],
+      certificate: "/certificates/ux-ui-certificate.pdf",
+
       icon: Sparkles,
     },
     {
@@ -52,6 +57,7 @@ export const About = () => {
       description:
         "I studied how digital interfaces are built — from programming fundamentals to JavaScript, React and project work. I also worked on a team project using Jira and sprint-based workflows. This technical foundation helps me design with a clearer understanding of what happens beyond the canvas.",
       details: ["JavaScript", "React", "HTML & CSS", "Jira", "Agile / Scrum"],
+      certificate: "/certificates/frontend-certificate.pdf",
       icon: Code2,
     },
     {
@@ -410,17 +416,7 @@ export const About = () => {
                             {item.period}
                           </span>
 
-                          {item.status && (
-                            <span className="inline-flex items-center gap-2 rounded-full border border-primary-500/40 bg-primary-500/10 px-3 py-1 font-mono text-xs text-primary-300">
-                              <span className="relative flex h-1.5 w-1.5">
-                                <span className="absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-60 animate-ping" />
-
-                                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-primary-500" />
-                              </span>
-
-                              {item.status}
-                            </span>
-                          )}
+                      
                         </div>
 
                         <h3 className="font-sans text-2xl md:text-3xl font-semibold text-neutral-50">
@@ -451,6 +447,17 @@ export const About = () => {
                             </span>
                           ))}
                         </div>
+                        {item.certificate && (
+                          <a
+                            href={item.certificate}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-6 inline-flex items-center font-mono text-sm font-semibold text-primary-400 transition-colors duration-200 hover:text-primary-300"
+                          >
+                            View Certificate
+                            <ArrowUpRight className="ml-2 h-4 w-4" />
+                          </a>
+                        )}
                       </motion.div>
                     </div>
                   </motion.article>
@@ -637,7 +644,7 @@ export const About = () => {
 
               <Link
                 to="/contact"
-                className="group inline-flex items-center justify-center rounded-lg border-2 border-neutral-600 bg-bg-elevated px-8 py-4 font-semibold text-neutral-100 hover:border-primary-500 hover:text-primary-400 transition-all duration-200"
+                className="group inline-flex sm:w-[252px] items-center justify-center rounded-lg border-2 border-neutral-600 bg-bg-elevated px-8 py-4 font-semibold text-neutral-100 hover:border-primary-500 hover:text-primary-400 transition-all duration-200"
               >
                 Let’s Connect
               </Link>

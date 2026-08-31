@@ -560,7 +560,7 @@ export const Contact = () => {
               href={`https://mail.google.com/mail/?view=cm&fs=1&to=${CONTACT.email}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="group mt-8 inline-flex items-center justify-center rounded-lg border border-primary-500 px-6 py-3 font-semibold text-primary-400 transition-all duration-200 hover:bg-primary-500 hover:text-bg-page"
+              className="group mt-8 inline-flex w-[250px] items-center justify-center rounded-lg border border-primary-500 px-8 py-4 font-semibold text-primary-400 transition-all duration-200 hover:bg-primary-500 hover:text-bg-page"
             >
               Email Me
               <ArrowUpRight className="ml-2 h-5 w-5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />

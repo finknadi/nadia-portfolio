@@ -565,7 +565,7 @@ export const Skills = () => {
             <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
               <Link
                 to="/projects"
-                className="group inline-flex items-center justify-center rounded-lg border-2 border-primary-500 bg-primary-500 px-8 py-4 font-semibold text-bg-page shadow-glow hover:border-primary-400 hover:bg-primary-400 transition-all duration-200"
+                className="group inline-flex sm:w-[252px] items-center justify-center rounded-lg border-2 border-primary-500 bg-primary-500 px-8 py-4 font-semibold text-bg-page shadow-glow hover:border-primary-400 hover:bg-primary-400 transition-all duration-200"
               >
                 View Selected Work
                 <ArrowUpRight className="ml-2 h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
@@ -573,7 +573,7 @@ export const Skills = () => {
 
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center rounded-lg border-2 border-neutral-600 bg-bg-elevated px-8 py-4 font-semibold text-neutral-100 hover:border-primary-500 hover:text-primary-400 transition-all duration-200"
+                className="inline-flex sm:w-[252px] items-center justify-center rounded-lg border-2 border-neutral-600 bg-bg-elevated px-8 py-4 font-semibold text-neutral-100 hover:border-primary-500 hover:text-primary-400 transition-all duration-200"
               >
                 Let’s Connect
               </Link>

@@ -46,6 +46,7 @@ export const Home = () => {
     <div className="min-h-screen bg-bg-page relative overflow-hidden">
       {/* Animated Background */}
 
+
       {/* Hero Section */}
       <section className="relative min-h-[calc(100vh-5rem)] flex items-start lg:items-center justify-center px-4 sm:px-6 lg:px-8 py-10 lg:py-16">
         {/* Mobile video */}
@@ -54,6 +55,7 @@ export const Home = () => {
           muted
           loop
           playsInline
+          preload="auto"
           className="absolute inset-0 h-full w-full object-cover md:hidden"
         >
           <source src="/videos/hero-background-mobile.mp4" type="video/mp4" />
@@ -120,8 +122,7 @@ export const Home = () => {
               transition={{ delay: 1.8 }}
               className="text-lg md:text-2xl text-neutral-200 max-w-3xl mx-auto leading-relaxed"
             >
-              I design digital experiences with clarity, character and motion —
-              combining thoughtful UX, expressive UI and interactive technology.
+              I combine UX, visual design and motion to create websites and interfaces that feel clear, intuitive and engaging.
             </motion.p>
 
             {/* Expertise Tags */}
@@ -146,7 +147,7 @@ export const Home = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 2.4 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6"
+              className="inline-grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6"
             >
               <Link
                 to="/projects"
@@ -347,14 +348,14 @@ export const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center px-8 py-4 bg-primary-500 text-bg-page font-semibold rounded-lg hover:bg-primary-400 transition-all duration-200 shadow-glow hover:shadow-card-hover"
+                className="inline-flex items-center justify-center sm:w-[250px] px-8 py-4 bg-primary-500 text-bg-page font-semibold rounded-lg hover:bg-primary-400 transition-all duration-200 shadow-glow hover:shadow-card-hover"
               >
                 Let’s Connect
               </Link>
 
               <Link
                 to="/projects"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-neutral-600 text-neutral-100 hover:border-primary-500 hover:text-primary-400 font-semibold rounded-lg transition-all duration-200"
+                className="inline-flex items-center justify-center sm:w-[250px] px-8 py-4 border-2 border-neutral-600 text-neutral-100 hover:border-primary-500 hover:text-primary-400 font-semibold rounded-lg transition-all duration-200"
               >
                 Selected Work
                 <ArrowUpRight className="ml-2 h-5 w-5" />

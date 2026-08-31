@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://nadin-fink-portfolio.vercel.app/</loc>
+  </url>
+
+  <url>
+    <loc>https://nadin-fink-portfolio.vercel.app/about</loc>
+  </url>
+
+  <url>
+    <loc>https://nadin-fink-portfolio.vercel.app/skills</loc>
+  </url>
+
+  <url>
+    <loc>https://nadin-fink-portfolio.vercel.app/projects</loc>
+  </url>
+
+  <url>
+    <loc>https://nadin-fink-portfolio.vercel.app/contact</loc>
+  </url>
+
+  <url>
+    <loc>https://nadin-fink-portfolio.vercel.app/projects/daybake</loc>
+  </url>
+
+  <url>
+    <loc>https://nadin-fink-portfolio.vercel.app/projects/swisswatch</loc>
+  </url>
+
+  <url>
+    <loc>https://nadin-fink-portfolio.vercel.app/projects/local-loop</loc>
+  </url>
+</urlset>

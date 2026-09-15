@@ -9,9 +9,8 @@ import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { Skills } from "./pages/Skills";
 import { Projects } from "./pages/Projects";
-// import Blog from "./pages/Blog";
-// import CaseStudies from "./pages/CaseStudies";
 import { Contact } from "./pages/Contact";
+import { NotFound } from "./pages/NotFound";
 import "./App.css";
 
 function App() {
@@ -34,6 +33,8 @@ function App() {
             <Route path="/projects/daybake" element={<DayBake />} />
             <Route path="/projects/swisswatch" element={<Swisswatch />} />
             <Route path="/projects/local-loop" element={<LocalLoop />} />
+
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
 

@@ -1,6 +1,10 @@
 {
   "rewrites": [
     {
+      "source": "/projects/local-loop",
+      "destination": "/projects/local-loop/index.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
